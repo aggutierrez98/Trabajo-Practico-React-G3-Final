@@ -49,9 +49,9 @@ export const PersonaCard = ({ nombre, apellido, alias, email, _id: id }) => {
             <h3>Actualizar</h3>
 
             <form onSubmit={onSubmit}>
-                <input type="text" name="name" onChange={handleInputChange} value={name} placeholder="Ingresar nombre"></input>
-                <input type="text" name="surname" onChange={handleInputChange} value={surname} placeholder="Ingresar apellido"></input>
-                <input type="text" name="userTag" onChange={handleInputChange} value={userTag} placeholder="Ingresar alias"></input>
+                <input type="text" name="name" onChange={handleInputChange} value={name} placeholder="Ingresar nombre" autoComplete="off"></input>
+                <input type="text" name="surname" onChange={handleInputChange} value={surname} placeholder="Ingresar apellido" autoComplete="off"></input>
+                <input type="text" name="userTag" onChange={handleInputChange} value={userTag} placeholder="Ingresar alias" autoComplete="off"></input>
                 <button type="submit"> Hecho </button>
             </form>
 

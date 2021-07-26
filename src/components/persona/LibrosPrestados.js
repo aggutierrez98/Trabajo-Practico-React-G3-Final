@@ -19,6 +19,7 @@ export const LibrosPrestados = ({ id }) => {
 
     return (
         <div>
+            <br></br>
             <button
                 onClick={onClick}
             >
@@ -30,7 +31,7 @@ export const LibrosPrestados = ({ id }) => {
                 librosPersona?.map(libro => (
                     <LibroCard
                         key={libro._id}
-                        {...libro}
+                        id={libro._id}
                     />
                 ))
             }

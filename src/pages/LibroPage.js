@@ -6,6 +6,7 @@ import { startCargarPersonas } from '../actions/personas';
 import { BuscarPorGenero } from '../components/genero/BuscarPorGenero';
 import { FormAgregarLibros } from '../components/libro/FormAgregarLibros';
 import { LibroCard } from '../components/libro/LibroCard';
+import { SearchLibros } from '../components/libro/SearchLibros';
 
 
 export const LibroPage = () => {
@@ -23,6 +24,8 @@ export const LibroPage = () => {
     return (
         <div>
 
+            <SearchLibros />
+
             <FormAgregarLibros />
 
             <h1>LibroPage</h1>
@@ -31,7 +34,7 @@ export const LibroPage = () => {
                 libros?.map(libro => (
                     <LibroCard
                         key={libro._id}
-                        {...libro}
+                        id={libro._id}
                     />
                 ))
             }

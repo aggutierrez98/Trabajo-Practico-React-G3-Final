@@ -26,7 +26,7 @@ export const FormAgregarGenero = () => {
             <h2>Agregar genero</h2>
 
             <form onSubmit={handleSubmit}>
-                <input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar nombre"></input>
+                <input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar nombre" autoComplete="off"></input>
                 <button type="submit"> Hecho </button>
             </form>
 

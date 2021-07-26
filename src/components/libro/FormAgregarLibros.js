@@ -39,9 +39,9 @@ export const FormAgregarLibros = () => {
 
             <form onSubmit={handleSubmit}>
 
-                <input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar nombre"></input>
+                <input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar nombre" autoComplete="off"></input>
 
-                <input type="text" name="descripcion" onChange={handleInputChange} value={descripcion} placeholder="Ingresar descripcion"></input>
+                <input type="text" name="descripcion" onChange={handleInputChange} value={descripcion} placeholder="Ingresar descripcion" autoComplete="off"></input>
 
                 <select value={genero} onChange={generoChange}>
                     <option hidden> Seleccione un genero </option>
@@ -56,8 +56,6 @@ export const FormAgregarLibros = () => {
                         ))
                     }
                 </select>
-
-                {/* <input type="text" name="persona" onChange={handleInputChange} value={persona} placeholder="Ingresar persona"></input> */}
 
                 <button type="submit"> Hecho </button>
             </form>

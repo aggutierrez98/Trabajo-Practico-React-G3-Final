@@ -92,14 +92,3 @@ const actualizarPersona = (id, persona) => ({
         persona,
     }
 })
-
-export const buscarPersona = async (id) => {
-
-    try {
-        const { data } = await axios.get(`http://localhost:3000/persona/${id}`);
-        return data.persona;
-
-    } catch (error) {
-        console.log(error);
-    }
-}

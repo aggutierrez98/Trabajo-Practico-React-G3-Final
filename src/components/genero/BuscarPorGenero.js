@@ -51,7 +51,7 @@ export const BuscarPorGenero = () => {
                 librosPorGenero.map(libro => (
                     <LibroCard
                         key={libro._id}
-                        {...libro}
+                        id={libro._id}
                     />
                 ))
             }
