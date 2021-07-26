@@ -1,5 +1,5 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { startCrearLibro } from '../../actions/libros';
 import { useForm } from '../../hooks/useForm';
 
@@ -17,12 +17,20 @@ export const FormAgregarLibros = () => {
 
     const [formValues, handleInputChange, reset] = useForm(initialState);
 
-    const { nombre, descripcion, categoria, persona } = formValues;
+    const { nombre, descripcion } = formValues;
+
+    const { generos } = useSelector(state => state.genero);
+
+    const [genero, setGenero] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(startCrearLibro(nombre, descripcion, categoria, persona))
+        dispatch(startCrearLibro(nombre, descripcion, genero))
         reset();
+    };
+
+    const generoChange = (event) => {
+        setGenero(event.target.value);
     };
 
     return (
@@ -35,9 +43,22 @@ export const FormAgregarLibros = () => {
 
                 <input type="text" name="descripcion" onChange={handleInputChange} value={descripcion} placeholder="Ingresar descripcion"></input>
 
-                <input type="text" name="categoria" onChange={handleInputChange} value={categoria} placeholder="Ingresar categoria"></input>
+                <select value={genero} onChange={generoChange}>
+                    <option hidden> Seleccione un genero </option>
+                    {
+                        generos.map(genero => (
+                            <option
+                                value={genero._id}
+                                key={genero._id}
+                            >
+                                {genero.nombre}
+                            </option>
+                        ))
+                    }
+                </select>
 
-                <input type="text" name="persona" onChange={handleInputChange} value={persona} placeholder="Ingresar persona"></input>
+                {/* <input type="text" name="persona" onChange={handleInputChange} value={persona} placeholder="Ingresar persona"></input> */}
+
                 <button type="submit"> Hecho </button>
             </form>
 

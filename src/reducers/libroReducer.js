@@ -2,7 +2,6 @@ import { types } from "../types/types";
 
 const initialState = {
     libros: [],
-    personaLibro: {},
 }
 
 export const libroReducer = (state = initialState, action) => {
@@ -38,7 +37,7 @@ export const libroReducer = (state = initialState, action) => {
             return {
                 ...state,
                 libros: state.libros.map(libro => {
-                    if (libro._id === action.payload._id) {
+                    if (libro._id === action.payload.id) {
                         libro.persona_id = action.payload.persona_id;
                     }
 

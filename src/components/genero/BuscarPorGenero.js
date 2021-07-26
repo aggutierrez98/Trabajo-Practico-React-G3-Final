@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { startCargarGeneros } from '../../actions/generos';
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import { LibroCard } from '../libro/LibroCard';
 
 export const BuscarPorGenero = () => {
-
-    const dispatch = useDispatch();
 
     const [genero, setGenero] = useState("");
 
@@ -16,10 +13,6 @@ export const BuscarPorGenero = () => {
     const { generos } = useSelector(state => state.genero);
 
     const { libros } = useSelector(state => state.libro);
-
-    useEffect(() => {
-        dispatch(startCargarGeneros());
-    }, [dispatch]);
 
     const generoChange = (event) => {
         setGenero(event.target.value);

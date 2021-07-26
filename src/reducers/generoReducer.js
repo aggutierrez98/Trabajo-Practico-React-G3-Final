@@ -2,11 +2,6 @@ import { types } from "../types/types";
 
 const initialState = {
     generos: [],
-    generoActive: {
-        _id: null,
-        nombre: "",
-    }
-
 }
 
 export const generoReducer = (state = initialState, action) => {

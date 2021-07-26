@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
 import { startActualizarLibro, startBorrarLibro, startDevolverLibro, startPrestarLibro } from '../../actions/libros';
-import { buscarPersona, startCargarPersonas } from '../../actions/personas';
+import { buscarPersona } from '../../actions/personas';
 
 export const LibroCard = ({ nombre, descripcion, persona_id, _id: id }) => {
 
@@ -43,15 +43,19 @@ export const LibroCard = ({ nombre, descripcion, persona_id, _id: id }) => {
     }
 
     useEffect(() => {
-        dispatch(startCargarPersonas());
 
         const cargarPersona = async () => {
             const personaEncontrada = await buscarPersona(persona_id);
+
             setPersona(personaEncontrada);
         }
 
         if (persona_id) {
             cargarPersona();
+        }
+
+        return () => {
+            setPersona({});
         }
 
     }, [dispatch, persona_id])
@@ -66,7 +70,7 @@ export const LibroCard = ({ nombre, descripcion, persona_id, _id: id }) => {
             <p>{descripcion}</p>
 
             {
-                persona.nombre &&
+                persona_id &&
                 (<div>
                     <h2>Prestado a</h2>
                     <p>{persona.nombre}</p>

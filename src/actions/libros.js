@@ -44,8 +44,9 @@ export const startDevolverLibro = (id) => {
     return async (dispatch) => {
 
         const state = {
-            id: null
+            id
         }
+
         const { status, data } = await axios.put(`http://localhost:3000/libro/devolver/${id}`, state);
 
         if (status === 200) {
@@ -80,22 +81,21 @@ export const startPrestarLibro = (id, persona_id) => {
 }
 
 export const prestarLibro = (id, persona_id) => ({
-    type: types.libroReturn,
+    type: types.libroLend,
     payload: {
         id,
         persona_id
     },
 });
 
-export const startCrearLibro = (nombre, descripcion, categoria, persona) => {
+export const startCrearLibro = (nombre, descripcion, categoria_id) => {
 
     return async (dispatch) => {
 
         const libro = {
             nombre,
             descripcion,
-            categoria_id: "60bbceb13b6e7535804db9e6",
-            persona_id: "60bbe988562038259872791f"
+            categoria_id,
         };
 
         const { status, data } = await axios.post('http://localhost:3000/libro', libro);

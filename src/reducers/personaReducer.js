@@ -2,13 +2,6 @@ import { types } from "../types/types";
 
 const initialState = {
     personas: [],
-    personaActive: {
-        _id: null,
-        nombre: "",
-        apellido: "",
-        alias: "",
-        email: "",
-    }
 };
 
 export const personaReducer = (state = initialState, action) => {
