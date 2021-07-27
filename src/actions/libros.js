@@ -1,11 +1,13 @@
 import { types } from "../types/types"
 import axios from 'axios';
 
+const baseUrl = process.env.REACT_APP_API_URL;
+
 export const startCargarLibros = () => {
 
     return async (dispatch) => {
 
-        const { status, data } = await axios.get('http://localhost:3000/libro');
+        const { status, data } = await axios.get(`${baseUrl}/libro`);
 
         if (status === 200) {
             dispatch(cargarLibros(data.libros))
@@ -23,7 +25,7 @@ export const cargarLibros = (libros) => ({
 export const startBorrarLibro = (id) => {
     return async (dispatch) => {
 
-        const { status, data } = await axios.delete(`http://localhost:3000/libro/${id}`);
+        const { status, data } = await axios.delete(`${baseUrl}/libro/${id}`);
 
         if (status === 200) {
             dispatch(borrarLibro(id));
@@ -47,7 +49,7 @@ export const startDevolverLibro = (id) => {
             id
         }
 
-        const { status, data } = await axios.put(`http://localhost:3000/libro/devolver/${id}`, state);
+        const { status, data } = await axios.put(`${baseUrl}/libro/devolver/${id}`, state);
 
         if (status === 200) {
             dispatch(devolverLibro(id));
@@ -70,7 +72,7 @@ export const startPrestarLibro = (id, persona_id) => {
             persona_id
         }
 
-        const { status, data } = await axios.put(`http://localhost:3000/libro/prestar/${id}`, body);
+        const { status, data } = await axios.put(`${baseUrl}/libro/prestar/${id}`, body);
 
         if (status === 200) {
             dispatch(prestarLibro(id, persona_id));
@@ -98,7 +100,7 @@ export const startCrearLibro = (nombre, descripcion, categoria_id) => {
             categoria_id,
         };
 
-        const { status, data } = await axios.post('http://localhost:3000/libro', libro);
+        const { status, data } = await axios.post(`${baseUrl}/libro`, libro);
 
         if (status === 200) {
             dispatch(crearLibro(data.libro))
@@ -121,7 +123,7 @@ export const startActualizarLibro = (id, descripcion) => {
             descripcion
         };
 
-        const { status, data } = await axios.put(`http://localhost:3000/libro/${id}`, libro);
+        const { status, data } = await axios.put(`${baseUrl}/libro/${id}`, libro);
 
         if (status === 200) {
             dispatch(actualizarLibro(id, data.libro))

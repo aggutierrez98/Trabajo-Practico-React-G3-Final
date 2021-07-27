@@ -1,11 +1,13 @@
 import { types } from "../types/types"
 import axios from 'axios';
 
+const baseUrl = process.env.REACT_APP_API_URL;
+
 export const startCargarGeneros = () => {
 
     return async (dispatch) => {
 
-        const { status, data } = await axios.get('http://localhost:3000/categoria');
+        const { status, data } = await axios.get(`${baseUrl}/categoria`);
 
         if (status === 200) {
             dispatch(cargarGeneros(data.categorias));
@@ -24,7 +26,7 @@ export const startBorrarGenero = (id) => {
 
     return async (dispatch) => {
 
-        const { status, data } = await axios.delete(`http://localhost:3000/categoria/${id}`);
+        const { status, data } = await axios.delete(`${baseUrl}/categoria/${id}`);
 
         if (status === 200) {
             dispatch(borrarGenero(id));
@@ -47,7 +49,7 @@ export const startCrearGenero = (nombre) => {
             nombre,
         };
 
-        const { status, data } = await axios.post("http://localhost:3000/categoria", genero);
+        const { status, data } = await axios.post(`${baseUrl}/categoria`, genero);
 
         if (status === 200) {
             dispatch(crearGenero(data.categoria));

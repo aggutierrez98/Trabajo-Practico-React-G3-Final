@@ -1,12 +1,14 @@
 import { types } from "../types/types"
 import axios from 'axios';
 
+const baseUrl = process.env.REACT_APP_API_URL;
+
 export const startCargarPersonas = () => {
 
     return async (dispatch) => {
 
         try {
-            const { data } = await axios.get('http://localhost:3000/persona');
+            const { data } = await axios.get(`${baseUrl}/persona`);
             dispatch(cargarPersonas(data.personas))
 
         } catch (error) {
@@ -24,7 +26,7 @@ export const startBorrarPersona = (id) => {
     return async (dispatch) => {
 
         try {
-            await axios.delete(`http://localhost:3000/persona/${id}`);
+            await axios.delete(`${baseUrl}/persona/${id}`);
             dispatch(borrarPersona(id));
 
         } catch (error) {
@@ -50,7 +52,7 @@ export const startCrearpersona = (nombre, apellido, alias, email,) => {
         };
 
         try {
-            const { data } = await axios.post('http://localhost:3000/persona', persona);
+            const { data } = await axios.post(`${baseUrl}/persona`, persona);
             dispatch(crearPersona(data.persona))
 
         } catch (error) {
@@ -76,7 +78,7 @@ export const startActualizarpersona = (id, nombre, apellido, alias) => {
         };
 
         try {
-            const { data } = await axios.put(`http://localhost:3000/persona/${id}`, persona);
+            const { data } = await axios.put(`${baseUrl}/persona/${id}`, persona);
             dispatch(actualizarPersona(id, data.persona))
 
         } catch (error) {
