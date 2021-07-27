@@ -2,7 +2,7 @@
   "name": "where-is-my-books-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://aggutierrez98.github.io/Trabajo-Practico-React-G3",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
