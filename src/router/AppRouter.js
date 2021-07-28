@@ -12,6 +12,7 @@ import { HomePage } from '../pages/HomePage';
 import { LibroPage } from '../pages/LibroPage';
 import { PersonaPage } from '../pages/PersonaPage';
 
+import "../styles/router/styles.css"
 
 export const AppRouter = () => {
 
@@ -21,7 +22,7 @@ export const AppRouter = () => {
         <Router>
             <div className="navbar-position">
 
-            <Navbar/>
+                <Navbar />
             </div>
 
             <Switch>
