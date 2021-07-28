@@ -8,11 +8,11 @@
 } */
 
 body {
-  height: 100%;
-  font-family: "Noto Sans", sans-serif;
-  background-color: #ab4493;
-}
+  height: 100%; 
+	font-family: 'Noto Sans', sans-serif;
+  background-color: #ab4493; 
 
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
