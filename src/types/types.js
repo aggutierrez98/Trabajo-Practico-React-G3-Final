@@ -19,4 +19,8 @@ export const types = {
     personaDelete: "[persona] Borrar persona",
     personaUpdate: "[persona] Actualizar persona",
     personaSearchLibros: "[persona] Buscar libros por persona",
+
+    //Ui
+    modalOpen: "[modal] Montar modal",
+    modalClose: "[modal] Desmontar modal",
 };
