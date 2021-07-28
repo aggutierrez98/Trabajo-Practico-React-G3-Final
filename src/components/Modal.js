@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import "../styles/components/Modal.css"
+import "../components/css/Modal.css";
 import { useDispatch } from 'react-redux';
 import { cerrarModal } from '../actions/ui';
 
