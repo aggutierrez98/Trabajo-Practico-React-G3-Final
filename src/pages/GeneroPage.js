@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { startCargarGeneros } from '../actions/generos';
 import { FormAgregarGenero } from '../components/genero/FormAgregarGenero';
 import { GeneroCard } from '../components/genero/GeneroCard';
-
 export const GeneroPage = () => {
 
     const dispatch = useDispatch();
