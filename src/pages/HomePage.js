@@ -1,9 +1,10 @@
 import React from 'react'
+import { Modal } from '../components/Modal'
 
 export const HomePage = () => {
     return (
         <div>
-            <h1>HomePage</h1>
+            <Modal />
         </div>
     )
 }
