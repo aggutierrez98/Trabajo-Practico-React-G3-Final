@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useForm } from '../../hooks/useForm';
-import { startActualizarLibro, startBorrarLibro, startDevolverLibro, startPrestarLibro } from '../../actions/libros';
+import { startBorrarLibro } from '../../actions/libros';
+import { FormActualizarLibro } from './FormActualizarLibro';
+import { abrirModal } from '../../actions/ui';
+import { Modal } from '../Modal';
+import { PrestarDevolverLibro } from './PrestarDevolverLibro';
 
-export const LibroCard = ({ id }) => {
+export const LibroCard = ({ id: uid }) => {
 
     const dispatch = useDispatch();
 
     const { personas } = useSelector(state => state.persona);
     const { libros } = useSelector(state => state.libro);
+    const { modalOpen, id } = useSelector(state => state.ui);
 
     const [libro, setLibro] = useState({});
 
@@ -16,44 +20,16 @@ export const LibroCard = ({ id }) => {
 
     const [persona, setPersona] = useState({});
 
-    const [prestando, setPrestando] = useState(false);
-
-    const [formValues, handleInputChange, reset] = useForm({
-        descripcion: "",
-    });
-
-    const { descripcion: desc } = formValues;
-
-    const onPrestar = () => {
-        prestando ? setPrestando(false) : setPrestando(true);
-    };
-
-    const onPrestamo = (persona_id) => {
-        dispatch(startPrestarLibro(id, persona_id));
-        setPrestando(false);
-    }
-
-    const onDevolver = () => {
-        dispatch(startDevolverLibro(id));
-    };
-
     const onBorrar = () => {
-        dispatch(startBorrarLibro(id))
+        dispatch(startBorrarLibro(uid))
     };
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        dispatch(startActualizarLibro(id, desc))
-        reset();
-    }
 
     useEffect(() => {
 
-        const libroEncontrado = libros.find(lib => lib._id === id);
+        const libroEncontrado = libros.find(lib => lib._id === uid);
         setLibro(libroEncontrado);
 
-    }, [id, libros])
-
+    }, [uid, libros])
 
     useEffect(() => {
 
@@ -62,6 +38,9 @@ export const LibroCard = ({ id }) => {
 
     }, [persona_id, personas])
 
+    const onModal = () => {
+        dispatch(abrirModal(uid));
+    }
 
     return (
         <div>
@@ -80,42 +59,26 @@ export const LibroCard = ({ id }) => {
                 )
             }
 
+            <PrestarDevolverLibro uid={uid} />
 
-            <button
-                onClick={onPrestar}
-            >
-                Prestar a
-            </button>
+            <br></br>
 
-            {
-                prestando &&
-                personas.map((persona) => (
-                    <div
-                        key={persona._id}
-                        onClick={() => onPrestamo(persona._id)}
-                    >
-                        {persona.nombre}
-                    </div>
-                ))
-            }
-
-            <button
-                onClick={onDevolver}
-            >
-                Devolver
-            </button>
             <button
                 onClick={onBorrar}
             >
                 Borrar
             </button>
 
-            <h3>Actualizar</h3>
+            <br></br>
+            <br></br>
 
-            <form onSubmit={onSubmit}>
-                <input type="text" name="descripcion" onChange={handleInputChange} value={desc} placeholder="Ingresar descripcion" autoComplete="off"></input>
-                <button type="submit"> Hecho </button>
-            </form>
+            <button onClick={onModal}>Actualizar Libro</button>
+            {
+                (modalOpen && uid === id) && (
+                    <Modal component={FormActualizarLibro} id={uid} />
+                )
+
+            }
 
             <br></br>
         </div>

@@ -1,7 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { startCrearGenero } from '../../actions/generos';
+import { cerrarModal } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
+
+import "../../styles/components/form.css";
 
 const initialState = {
     nombre: "",
@@ -19,6 +22,7 @@ export const FormAgregarGenero = () => {
         e.preventDefault();
         dispatch(startCrearGenero(nombre));
         reset();
+        dispatch(cerrarModal());
     };
 
     return (

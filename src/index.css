@@ -6,12 +6,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 } */
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+
 body {
-  height: 100%; 
-	font-family: 'Noto Sans', sans-serif;
-  background-color: #ab4493; 
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--darkpink);
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --darkpink: #ab4493;
+  --lightpink: #f045c8;
 }

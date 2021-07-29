@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Where is my books app",
+  "name": "Created using redux and custom hooks",
   "icons": [
     {
       "src": "favicon.ico",
