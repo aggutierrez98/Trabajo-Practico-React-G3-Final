@@ -33,7 +33,7 @@ export const FormActualizarLibro = ({ id }) => {
                     <span> *</span>
                 </div>
                 <input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar nombre" autoComplete="off" required></input>
-                <label>Descripcion</label>
+                <label className="form-label">Descripcion</label>
                 <input type="text" name="descripcion" onChange={handleInputChange} value={descripcion} placeholder="Ingresar descripcion" autoComplete="off"></input>
                 <button className="boton-form">Hecho</button>
                 <div className="form-label">

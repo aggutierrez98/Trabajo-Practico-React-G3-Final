@@ -9,6 +9,11 @@
   color: white;
   font-size: 15px;
   border: none;
+  transition: background-color 0.2s;
+}
+
+.boton-form:hover {
+  background-color: var(--lightpink);
 }
 
 .form {
@@ -23,15 +28,16 @@
 }
 
 .form input {
-  width: 98%;
+  width: 95.25%;
   margin-bottom: 20px;
   border-radius: 5px;
   height: 3em;
   border-color: var(--lightpink);
   outline-color: var(--darkpink);
+  padding-left: 10px;
 }
 
-form input::placeholder {
+.form input::placeholder {
   color: var(--lightpink);
   font-size: 1.2em;
   font-style: italic;
