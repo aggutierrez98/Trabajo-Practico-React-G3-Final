@@ -6,6 +6,7 @@ import { abrirModal } from '../actions/ui';
 import { Modal } from '../components/Modal';
 import { FormAgregarPersona } from '../components/persona/FormAgregarPersona';
 import { PersonaCard } from '../components/persona/PersonaCard';
+import './css/pages.css';
 
 export const PersonaPage = () => {
 
@@ -25,7 +26,7 @@ export const PersonaPage = () => {
     };
 
     return (
-        <div>
+        <div className="contactForm">
             <h1>PersonaPage</h1>
 
             <button onClick={onModal}>Agregar Persona</button>

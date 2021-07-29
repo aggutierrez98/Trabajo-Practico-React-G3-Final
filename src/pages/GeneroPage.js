@@ -22,7 +22,7 @@ export const GeneroPage = () => {
     };
 
     return (
-        <div>
+        <div className="contactForm" >
             <h1>Genero Page</h1>
 
             <button onClick={onModal}>Agregar Genero</button>
