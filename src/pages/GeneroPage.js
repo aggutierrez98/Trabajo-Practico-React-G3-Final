@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { startCargarGeneros } from '../actions/generos';
 import { FormAgregarGenero } from '../components/genero/FormAgregarGenero';
 import { GeneroCard } from '../components/genero/GeneroCard';
+import './css/generoPageStyle.css';
+
 export const GeneroPage = () => {
 
     const dispatch = useDispatch();
@@ -15,20 +17,22 @@ export const GeneroPage = () => {
 
 
     return (
-        <div>
-            <h1>Genero Page</h1>
+        <div className="estiloGenero">
 
-            <FormAgregarGenero />
+                <h1>Página de Géneros </h1>
 
-            {
-                generos?.map(genero => (
-                    <GeneroCard
-                        key={genero._id}
-                        {...genero}
-                    />
-                ))
-            }
+                <FormAgregarGenero />
 
-        </div>
+
+                <h2>Lista de géneros existentes</h2>
+                {
+                    generos?.map(genero => (
+                        <GeneroCard
+                            key={genero._id}
+                            {...genero}
+                        />
+                    ))
+                }
+            </div>
     )
 }

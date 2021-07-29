@@ -7,13 +7,11 @@
 .titulo-nav{
     display: inline-flex;
     margin: 0 10px;
-    padding: 10px;
     border-radius: 4px;
 }
 
 .titulo-nav:hover{
     background-color: rgba(255, 255, 255, 0.466);
-    padding: 10px;
 }
 
 .titulo-nav a{
@@ -21,4 +19,5 @@
     color: #fff;
     text-transform: capitalize;
     font-weight: bold;
+    padding: 10px;
 }
