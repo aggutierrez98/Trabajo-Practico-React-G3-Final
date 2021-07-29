@@ -25,15 +25,36 @@ export const FormAgregarPersona = () => {
     }
 
     return (
-        <div>
+
+        <form className="form" onSubmit={onSubmit}>
             <h2>Agregar persona</h2>
-            <form onSubmit={onSubmit}>
-                <input type="text" name="name" onChange={handleInputChange} value={name} placeholder="Ingresar nombre" autoComplete="off"></input>
-                <input type="text" name="surname" onChange={handleInputChange} value={surname} placeholder="Ingresar apellido" autoComplete="off"></input>
-                <input type="text" name="userTag" onChange={handleInputChange} value={userTag} placeholder="Ingresar alias" autoComplete="off"></input>
-                <input type="text" name="email" onChange={handleInputChange} value={email} placeholder="Ingresar email" autoComplete="off"></input>
-                <button type="submit"> Hecho </button>
-            </form>
-        </div>
+            <p>Ingresar datos de una persona</p>
+            <div className="form-label">
+                <label>Nombre</label>
+                <span> *</span>
+            </div>
+            <input type="text" name="name" onChange={handleInputChange} value={name} placeholder="Ingresar nombre" autoComplete="off" required pattern="[A-Za-z]{1,15}"></input>
+            <div className="form-label">
+                <label>Apellido</label>
+                <span> *</span>
+            </div>
+            <input type="text" name="surname" onChange={handleInputChange} value={surname} placeholder="Ingresar apellido" autoComplete="off" required pattern="[A-Za-z]{1,15}"></input>
+            <div className="form-label">
+                <label>Alias</label>
+                <span> *</span>
+            </div>
+            <input type="text" name="userTag" onChange={handleInputChange} value={userTag} placeholder="Ingresar alias" autoComplete="off" required pattern="[A-Za-z0-9_-]{1,15}"></input>
+            <div className="form-label">
+                <label>Email</label>
+                <span> *</span>
+            </div>
+            <input type="email" name="email" onChange={handleInputChange} value={email} placeholder="Ingresar email" autoComplete="off" required></input>
+            <button className="boton-form">Hecho</button>
+            <div className="form-label">
+                <span>* </span>
+                <label>Los campos son obligatorios</label>
+            </div>
+        </form>
+
     )
 }

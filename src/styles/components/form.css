@@ -1,0 +1,76 @@
+.boton-form {
+  background-color: var(--darkpink);
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 15px;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.boton-form:hover {
+  background-color: var(--lightpink);
+}
+
+.form {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.form p {
+  font-size: 20px;
+}
+
+.form input {
+  width: 95.25%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  height: 3em;
+  border-color: var(--lightpink);
+  outline-color: var(--darkpink);
+  padding-left: 10px;
+}
+
+.form input::placeholder {
+  color: var(--lightpink);
+  font-size: 1.2em;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.form h2 {
+  font-size: 35px;
+  color: var(--darkpink);
+}
+
+.form select {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 3em;
+  border-color: var(--lightpink);
+  border-radius: 5px;
+  outline-color: var(--darkpink);
+  color: var(--lightpink);
+  font-size: 0.95em;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.form h2 {
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+.form-label {
+  font-size: 13px;
+}
+
+.form-label span {
+  color: var(--darkpink);
+}

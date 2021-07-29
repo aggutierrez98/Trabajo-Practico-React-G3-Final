@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { startCrearLibro } from '../../actions/libros';
+import { cerrarModal } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
+
+import "../../styles/components/form.css";
 
 const initialState = {
     nombre: "",
@@ -27,6 +30,7 @@ export const FormAgregarLibros = () => {
         e.preventDefault();
         dispatch(startCrearLibro(nombre, descripcion, genero))
         reset();
+        dispatch(cerrarModal());
     };
 
     const generoChange = (event) => {
@@ -34,32 +38,43 @@ export const FormAgregarLibros = () => {
     };
 
     return (
-        <div>
+        <form className="form" onSubmit={handleSubmit}>
+
             <h2>Agregar libro</h2>
+            <p>Ingresar datos de un libro</p>
 
-            <form onSubmit={handleSubmit}>
+            <div className="form-label">
+                <label>Nombre</label>
+                <span> *</span>
+            </div>
+            <input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar nombre" autoComplete="off" required></input>
 
-                <input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar nombre" autoComplete="off"></input>
+            <label className="form-label">Descripcion</label>
+            <input type="text" name="descripcion" onChange={handleInputChange} value={descripcion} placeholder="Ingresar descripcion" autoComplete="off"></input>
 
-                <input type="text" name="descripcion" onChange={handleInputChange} value={descripcion} placeholder="Ingresar descripcion" autoComplete="off"></input>
+            <div className="form-label">
+                <label>Genero</label>
+                <span> *</span>
+            </div>
+            <select value={genero} onChange={generoChange} required>
+                <option hidden value=""> Seleccione un genero </option>
+                {
+                    generos.map(genero => (
+                        <option
+                            value={genero._id}
+                            key={genero._id}
+                        >
+                            {genero.nombre}
+                        </option>
+                    ))
+                }
+            </select>
 
-                <select value={genero} onChange={generoChange}>
-                    <option hidden> Seleccione un genero </option>
-                    {
-                        generos.map(genero => (
-                            <option
-                                value={genero._id}
-                                key={genero._id}
-                            >
-                                {genero.nombre}
-                            </option>
-                        ))
-                    }
-                </select>
-
-                <button type="submit"> Hecho </button>
-            </form>
-
-        </div>
+            <button className="boton-form">Hecho</button>
+            <div className="form-label">
+                <span>* </span>
+                <label>Los campos son obligatorios</label>
+            </div>
+        </form>
     )
 }
