@@ -18,9 +18,11 @@ export const Modal = ({
     return (
 
         <div>
-            <div id="miModal" className="modal">
+            <div className="modal">
                 <div className="modal-contenido">
-                    <button onClick={onModal}>X</button>
+                    <div className="modal-close">
+                        <button onClick={onModal}><ion-icon name="close-circle-outline"></ion-icon></button>
+                    </div>
                     <Component {...rest} />
                 </div>
             </div>
