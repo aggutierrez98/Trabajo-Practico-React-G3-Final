@@ -33,22 +33,22 @@ export const FormAgregarPersona = () => {
                 <label>Nombre</label>
                 <span> *</span>
             </div>
-            <input type="text" name="name" onChange={handleInputChange} value={name} placeholder="Ingresar nombre" autoComplete="off" required></input>
+            <input type="text" name="name" onChange={handleInputChange} value={name} placeholder="Ingresar nombre" autoComplete="off" required pattern="[A-Za-z]{1,15}"></input>
             <div className="form-label">
                 <label>Apellido</label>
                 <span> *</span>
             </div>
-            <input type="text" name="surname" onChange={handleInputChange} value={surname} placeholder="Ingresar apellido" autoComplete="off" required></input>
+            <input type="text" name="surname" onChange={handleInputChange} value={surname} placeholder="Ingresar apellido" autoComplete="off" required pattern="[A-Za-z]{1,15}"></input>
             <div className="form-label">
                 <label>Alias</label>
                 <span> *</span>
             </div>
-            <input type="text" name="userTag" onChange={handleInputChange} value={userTag} placeholder="Ingresar alias" autoComplete="off" required></input>
+            <input type="text" name="userTag" onChange={handleInputChange} value={userTag} placeholder="Ingresar alias" autoComplete="off" required pattern="[A-Za-z0-9_-]{1,15}"></input>
             <div className="form-label">
                 <label>Email</label>
                 <span> *</span>
             </div>
-            <input type="text" name="email" onChange={handleInputChange} value={email} placeholder="Ingresar email" autoComplete="off" required></input>
+            <input type="email" name="email" onChange={handleInputChange} value={email} placeholder="Ingresar email" autoComplete="off" required></input>
             <button className="boton-form">Hecho</button>
             <div className="form-label">
                 <span>* </span>
