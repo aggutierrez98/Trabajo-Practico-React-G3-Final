@@ -6,7 +6,7 @@ import { abrirModal } from '../actions/ui';
 import { Modal } from '../components/Modal';
 import { FormAgregarPersona } from '../components/persona/FormAgregarPersona';
 import { PersonaCard } from '../components/persona/PersonaCard';
-import './css/pages.css';
+// import './css/pages.css';
 
 export const PersonaPage = () => {
 
