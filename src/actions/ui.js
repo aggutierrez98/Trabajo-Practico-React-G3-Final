@@ -10,3 +10,7 @@ export const abrirModal = (id) => ({
 export const cerrarModal = () => ({
     type: types.modalClose
 });
+
+export const terminarBusqueda = () => ({
+    type: types.searchFinish
+})

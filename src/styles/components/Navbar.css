@@ -1,12 +1,20 @@
 .navbar-position {
-  position: sticky;
+  position: fixed;
   top: 0px;
-  background-color: #ab4493;
+  background-color: rgba(195, 24, 201, 0.5);
+  width: 100%;
+  height: 63px;
+  z-index: 1000;
+  margin-left: -4px;
+}
+
+.home {
+  margin-left: 500px;
 }
 
 .titulo-nav {
   display: inline-flex;
-  margin: 0 10px;
+  margin: 10px 10px 0px;
   padding: 10px;
   border-radius: 4px;
   text-decoration: none;

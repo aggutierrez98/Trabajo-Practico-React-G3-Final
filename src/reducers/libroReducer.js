@@ -2,10 +2,10 @@ import { types } from "../types/types";
 
 const initialState = {
     libros: [],
+    librosFiltrados: [],
 }
 
 export const libroReducer = (state = initialState, action) => {
-
 
     switch (action.type) {
 
@@ -61,6 +61,13 @@ export const libroReducer = (state = initialState, action) => {
 
                     return libro;
                 }),
+            };
+
+        case types.libroFilter:
+            return {
+                ...state,
+                librosFiltrados: action.payload
+                // libros: action.payload,
             };
 
         default:

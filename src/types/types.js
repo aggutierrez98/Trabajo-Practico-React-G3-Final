@@ -7,6 +7,7 @@ export const types = {
     libroReturn: "[libro] Devolver Libro",
     libroDelete: "[libro] Borrar Libro",
     libroUpdate: "[libro] Actualizar Libro",
+    libroFilter: "[libro] Filtrar libros",
 
     //Generos
     generoLoad: "[genero] Cargar Generos",
@@ -21,6 +22,7 @@ export const types = {
     personaSearchLibros: "[persona] Buscar libros por persona",
 
     //Ui
-    modalOpen: "[modal] Montar modal",
-    modalClose: "[modal] Desmontar modal",
+    modalOpen: "[ui] Montar modal",
+    modalClose: "[ui] Desmontar modal",
+    searchFinish: "[ui] Terminar busqueda"
 };

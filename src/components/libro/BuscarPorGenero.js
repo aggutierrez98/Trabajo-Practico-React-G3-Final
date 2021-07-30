@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
-import { LibroCard } from '../libro/LibroCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { filtrarLibros } from '../../actions/libros';
+import { terminarBusqueda } from '../../actions/ui';
 
 export const BuscarPorGenero = () => {
 
     const [genero, setGenero] = useState("");
-
-    const [librosPorGenero, setlibrosPorGenero] = useState([]);
-
-    const [mostarLibros, setMostarLibros] = useState(false);
+    const dispatch = useDispatch();
 
     const { generos } = useSelector(state => state.genero);
 
@@ -19,13 +17,14 @@ export const BuscarPorGenero = () => {
     };
 
     const buscarLibros = () => {
-        setlibrosPorGenero(libros.filter(libro => libro.categoria_id === genero));
-        setMostarLibros(true);
+        const librosPorGenero = (libros.filter(libro => libro.categoria_id === genero));
+        dispatch(filtrarLibros(librosPorGenero));
+        dispatch(terminarBusqueda());
     };
 
     return (
-        <div>
-            <h2>Buscar libros por genero: </h2>
+        <div className="search-genero">
+            {/* <h2>Buscar libros por genero: </h2> */}
 
             <select value={genero} onChange={generoChange}>
                 <option hidden> Seleccione un genero </option>
@@ -45,16 +44,6 @@ export const BuscarPorGenero = () => {
             <button onClick={buscarLibros}>
                 Buscar
             </button>
-
-            {
-                (mostarLibros) &&
-                librosPorGenero.map(libro => (
-                    <LibroCard
-                        key={libro._id}
-                        id={libro._id}
-                    />
-                ))
-            }
 
         </div>
     )

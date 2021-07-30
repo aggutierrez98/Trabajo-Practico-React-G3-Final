@@ -141,3 +141,10 @@ export const actualizarLibro = (id, libro) => ({
         libro,
     }
 })
+
+export const filtrarLibros = (libros) => ({
+    type: types.libroFilter,
+    payload: libros
+});
+
+
