@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { startCargarGeneros } from '../actions/generos';
 import { startCargarLibros } from '../actions/libros';
@@ -13,21 +13,43 @@ import './css/libroPageStyle.css'
 
 export const LibroPage = () => {
 
+    const [init, setInit] = useState([])
+    const [filtros, setFiltros] = useState([])
     const dispatch = useDispatch();
 
     const { modalOpen, id } = useSelector(state => state.ui)
 
     const { libros } = useSelector(state => state.libro);
-
+    // let { filtros } = useSelector(state => state.libro);
+    // setFiltros(libros);
+    // useSelector(state => console.log(state))
     useEffect(() => {
+        console.log(libros)
         dispatch(startCargarLibros());
         dispatch(startCargarPersonas());
         dispatch(startCargarGeneros());
+        setFiltros(libros);
     }, [dispatch]);
+    
 
     const onModal = () => {
         dispatch(abrirModal());
     };
+
+    const buscarLibro = (e) => {
+        e.preventDefault()
+        let {value} = e.target
+        setInit(value)
+    }
+
+    const buscarLibroSeleccionado = () => {
+        console.log(init)
+        console.log(filtros)
+        let nombreMayus = init.toUpperCase()
+        let nuevosFiltros = filtros.filter((a) => a.nombre === nombreMayus);
+        console.log(nuevosFiltros)
+        setFiltros(nuevosFiltros);
+    }
 
     return (
         
@@ -36,7 +58,16 @@ export const LibroPage = () => {
             <h2> Buscar libro </h2>
 
             <div className="encabezado">   
-                <SearchLibros />
+                {/* <SearchLibros /> */}
+                <input
+                    type="text"
+                    onChange={buscarLibro}
+                />
+                <button
+                    onClick={buscarLibroSeleccionado}
+                >
+                    Buscar
+                </button>
                 <button onClick={onModal}>
                     
                     <ion-icon name="person-add"></ion-icon>
@@ -57,7 +88,7 @@ export const LibroPage = () => {
                     <th colSpan="4">Acciones</th>
                 </tr>
             {
-                libros?.map(libro => (
+                filtros.map(libro => (
                     <LibroCard
                     key={libro._id}
                     id={libro._id}
