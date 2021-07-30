@@ -4,26 +4,27 @@ import { startCrearGenero } from '../../actions/generos';
 import { cerrarModal } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
 
-import "../../styles/components/form.css";
+// import "../../styles/components/form.css";
 
 const initialState = {
     nombre: "",
 };
 
-export const FormAgregarGenero = () => {
+// export const FormAgregarGenero = () => {
 
-    const dispatch = useDispatch();
+//     const dispatch = useDispatch();
 
-    const [formValues, handleInputChange, reset] = useForm(initialState);
+//     const [formValues, handleInputChange, reset] = useForm(initialState);
 
-    const { nombre } = formValues;
+//     const { nombre } = formValues;
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(startCrearGenero(nombre));
-        reset();
-        dispatch(cerrarModal());
-    };
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+//         dispatch(startCrearGenero(nombre));
+//         reset();
+//         dispatch(cerrarModal());
+//     };
+
 
     return (
         <div>
@@ -50,3 +51,4 @@ export const FormAgregarGenero = () => {
         </div>
     )
 }
+

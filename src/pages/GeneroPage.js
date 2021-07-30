@@ -10,18 +10,19 @@ export const GeneroPage = () => {
 
     const dispatch = useDispatch();
 
-    const { modalOpen, id } = useSelector(state => state.ui)
+    // const { modalOpen, id } = useSelector(state => state.ui)
     const { generos } = useSelector(state => state.genero);
 
     useEffect(() => {
         dispatch(startCargarGeneros());
     }, [dispatch]);
 
-    const onModal = () => {
-        dispatch(abrirModal());
-    };
+    // const onModal = () => {
+    //     dispatch(abrirModal());
+    // };
 
     return (
+
         <div className="estiloGenero">
 
                 <h1>Página de Géneros </h1>
@@ -39,5 +40,7 @@ export const GeneroPage = () => {
                     ))
                 }
             </div>
+
+
     )
 }

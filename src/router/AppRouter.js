@@ -21,7 +21,6 @@ export const AppRouter = () => {
 
         <Router>
             <div className="navbar-position">
-
                 <Navbar />
             </div>
 
