@@ -82,11 +82,20 @@ h2 {
   border-style: solid;
   border-radius: 10px;
   margin: 30px;
+  height: 85px;
+  width: 85%;
 }
 
 .cardGenero button {
   height: 50px;
   width: 60px;
+  margin: 0px 20px 0px 0;
+  margin-right: 20px;
+  border: none;
+}
+
+.cardGenero button:hover {
+  background-color: var(--lightpink);
 }
 
 .cardGenero tr {
@@ -97,6 +106,7 @@ h2 {
 
 .cardGenero tr td {
   margin-left: 50%;
+  margin-right: 15px;
 }
 
 .formGenero {
@@ -132,4 +142,8 @@ h2 {
   width: 100%;
   height: 100%;
   transition: color 0.2s;
+}
+
+.formGenero button ion-icon:hover {
+  color: var(--lightpink);
 }

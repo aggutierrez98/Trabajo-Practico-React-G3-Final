@@ -8,7 +8,7 @@ export const Navbar = () => {
             <Link className="titulo-nav" to='/persona'>  personas  </Link>
             <Link className="titulo-nav" to='/libro'>  libros  </Link>
             <Link className="titulo-nav" to='/genero'>  generos  </Link>
-            <Link className="titulo-nav home" to='/'> Home </Link>
+            {/* <Link className="titulo-nav home" to='/'> Home </Link> */}
             <hr></hr>
         </div>
     )
