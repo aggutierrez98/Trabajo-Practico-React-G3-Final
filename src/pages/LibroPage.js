@@ -4,7 +4,7 @@ import { startCargarGeneros } from '../actions/generos';
 import { startCargarLibros } from '../actions/libros';
 import { startCargarPersonas } from '../actions/personas';
 import { abrirModal } from '../actions/ui';
-import { BuscarPorGenero } from '../components/genero/BuscarPorGenero';
+import { BuscarPorGenero } from '../components/libro/BuscarPorGenero';
 import { FormAgregarLibros } from '../components/libro/FormAgregarLibros';
 import { LibroCard } from '../components/libro/LibroCard';
 import { SearchLibros } from '../components/libro/SearchLibros';
@@ -19,6 +19,8 @@ export const LibroPage = () => {
 
     const { modalOpen, id } = useSelector(state => state.ui)
 
+    const { filtered } = useSelector(state => state.ui)
+    const { librosFiltrados } = useSelector(state => state.libro);
     const { libros } = useSelector(state => state.libro);
     // let { filtros } = useSelector(state => state.libro);
     // setFiltros(libros);
@@ -97,7 +99,21 @@ export const LibroPage = () => {
                 }
             </table>
 
-            <BuscarPorGenero />
+            {
+                (filtered) &&
+                librosFiltrados?.map(libro => (
+                    <LibroCard
+                        key={libro._id}
+                        id={libro._id}
+                    />
+                ))
+            }
+            {
+                (filtered) &&
+                (librosFiltrados.length === 0) && (
+                    <h1>No se encuentra busqueda</h1>
+                )
+            }
 
         </div>
     )
