@@ -5,16 +5,9 @@ import "../styles/components/Navbar.css";
 export const Navbar = () => {
     return (
         <div className="navbar-position">
-            <div className="titulo-nav">
-                <Link to='/persona'>  personas  </Link>
-            </div>
-            <div className="titulo-nav">
-                <Link to='/libro'>  libros  </Link>
-            </div>
-            <div className="titulo-nav">
-                <Link to='/genero'>  generos  </Link>
-            </div>
-
+            <Link className="titulo-nav" to='/persona'>  personas  </Link>
+            <Link className="titulo-nav" to='/libro'>  libros  </Link>
+            <Link className="titulo-nav" to='/genero'>  generos  </Link>
             <br></br>
             <hr></hr>
         </div>

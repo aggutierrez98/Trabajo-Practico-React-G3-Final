@@ -9,16 +9,13 @@
   margin: 0 10px;
   padding: 10px;
   border-radius: 4px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
 .titulo-nav:hover {
   background-color: rgba(255, 255, 255, 0.466);
   padding: 10px;
-}
-
-.titulo-nav a {
-  text-decoration: none;
-  color: #fff;
-  text-transform: capitalize;
-  font-weight: bold;
 }
