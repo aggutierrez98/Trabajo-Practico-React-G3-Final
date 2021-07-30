@@ -32,8 +32,6 @@ export const SearchLibros = () => {
 
     return (
         <div>
-            <h2> Buscar libro </h2>
-
             <form onSubmit={handleSearch}>
                 <input
                     type="text"
@@ -42,13 +40,14 @@ export const SearchLibros = () => {
                     autoComplete="off"
                     value={searchText}
                     onChange={handleInputChange}
+                    className="campoBuscar"
                 />
 
                 <button
                     type="submit"
-                    className="btn m-1 btn-block btn-outline-primary"
+                    className="buscar"
                 >
-                    Buscar...
+                    <ion-icon name="search"></ion-icon>
                 </button>
             </form>
             <div>
@@ -69,7 +68,6 @@ export const SearchLibros = () => {
                 }
 
             </div>
-            <hr />
         </div>
     )
 }

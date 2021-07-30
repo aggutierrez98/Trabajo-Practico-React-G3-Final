@@ -43,44 +43,49 @@ export const LibroCard = ({ id: uid }) => {
     }
 
     return (
-        <div>
-            <h2>Nombre:</h2>
-            <p>{nombre}</p>
-
-            <h2>Descripcion: </h2>
-            <p>{descripcion}</p>
-
-            {
-                persona &&
-                (<div>
-                    <h2>Prestado a</h2>
-                    <p>{persona.nombre}</p>
-                </div>
-                )
-            }
-
-            <PrestarDevolverLibro uid={uid} />
-
-            <br></br>
-
+        <tr>
+            <td>{nombre}</td>
+            <td>{descripcion}</td>
+            <td>
+                {
+                    persona ? `${persona.nombre}` :  `No está prestado`                
+                }
+            </td>
+            
+                <PrestarDevolverLibro uid={uid} />
+            <td>
             <button
                 onClick={onBorrar}
-            >
-                Borrar
-            </button>
+                >
+                <span className="tooltip">-
+                <span class="tooltiptext">Borrar</span>
+                </span>
+                <ion-icon name="trash"></ion-icon>
+                <span className="tooltip">-
+                <span class="tooltiptext">Borrar</span>
+                </span>
 
-            <br></br>
-            <br></br>
+            </button>                
+            </td>
+            <td>
 
-            <button onClick={onModal}>Actualizar Libro</button>
+            <button onClick={onModal}>
+                <span className="tooltip">-
+                <span class="tooltiptext">Refrescar</span>
+                </span>
+                <ion-icon name="refresh-circle"></ion-icon>
+                <span className="tooltip">-
+                <span class="tooltiptext">Refrescar</span>
+                </span>
+                </button>
             {
                 (modalOpen && uid === id) && (
                     <Modal component={FormActualizarLibro} id={uid} />
-                )
+                    )
+                    
+                }
+                </td>
 
-            }
-
-            <br></br>
-        </div>
+        </tr>
     )
 }
