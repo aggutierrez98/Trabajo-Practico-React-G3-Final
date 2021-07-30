@@ -25,22 +25,30 @@ const initialState = {
 //         dispatch(cerrarModal());
 //     };
 
-//     return (
-//         <form className="form" onSubmit={handleSubmit}>
-//             <h2>Agregar genero</h2>
-//             <p>Ingresar datos del genero</p>
 
-//             <div className="form-label">
-//                 <label>Nombre</label>
-//                 <span> *</span>
-//             </div>
-//             <input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar nombre" autoComplete="off" required></input>
+    return (
+        <div>
 
-//             <button className="boton-form">Hecho</button>
-//             <div className="form-label">
-//                 <span>* </span>
-//                 <label>Los campos son obligatorios</label>
-//             </div>
-//         </form>
-//     )
-// }
+            <form onSubmit={handleSubmit}>
+                
+                <label for="nombre" class="colocar_nombre">Agregar un nuevo género<span>*</span></label>
+
+                <div className="formGenero">
+                    <tr>
+                    <td><input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="¿Cuál es el nuevo género?" autoComplete="off"></input></td>
+                    <td><button type="submit"> Ingresar género </button></td>
+                    </tr>           
+                </div>
+                
+                
+            </form>
+            
+
+            <p class="aviso"><span> * </span>Campos obligatorios.</p>
+
+            <hr></hr>
+
+        </div>
+    )
+}
+

@@ -4,7 +4,7 @@ import { startCargarGeneros } from '../actions/generos';
 import { abrirModal } from '../actions/ui';
 import { FormAgregarGenero } from '../components/genero/FormAgregarGenero';
 import { GeneroCard } from '../components/genero/GeneroCard';
-import { Modal } from '../components/Modal';
+import './css/generoPageStyle.css';
 
 export const GeneroPage = () => {
 
@@ -22,25 +22,25 @@ export const GeneroPage = () => {
     // };
 
     return (
-        <div>
-            <h1>Genero Page</h1>
 
-            {/* <button onClick={onModal}>Agregar Genero</button>
-            {
-                (modalOpen && !id) && (
-                    <Modal component={FormAgregarGenero} modalOpen={modalOpen} />
-                )
-            } */}
+        <div className="estiloGenero">
 
-            {
-                generos?.map(genero => (
-                    <GeneroCard
-                        key={genero._id}
-                        {...genero}
-                    />
-                ))
-            }
+                <h1>Página de Géneros </h1>
 
-        </div>
+                <FormAgregarGenero />
+
+
+                <h2>Lista de géneros existentes</h2>
+                {
+                    generos?.map(genero => (
+                        <GeneroCard
+                            key={genero._id}
+                            {...genero}
+                        />
+                    ))
+                }
+            </div>
+
+
     )
 }

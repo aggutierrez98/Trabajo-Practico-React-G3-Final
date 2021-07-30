@@ -1,0 +1,23 @@
+.navbar-position{
+    position: sticky;
+    top:0px;
+    background-color: #ab4493; 
+}
+
+.titulo-nav{
+    display: inline-flex;
+    margin: 0 10px;
+    border-radius: 4px;
+}
+
+.titulo-nav:hover{
+    background-color: rgba(255, 255, 255, 0.466);
+}
+
+.titulo-nav a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: bold;
+    padding: 10px;
+}

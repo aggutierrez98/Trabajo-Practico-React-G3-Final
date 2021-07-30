@@ -30,7 +30,7 @@ export const LibroPage = () => {
     };
 
     return (
-        <div>
+        <div className="contactForm">
 
             <SearchLibros />
 
