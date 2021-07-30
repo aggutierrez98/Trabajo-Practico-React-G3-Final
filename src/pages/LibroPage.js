@@ -9,7 +9,7 @@ import { FormAgregarLibros } from '../components/libro/FormAgregarLibros';
 import { LibroCard } from '../components/libro/LibroCard';
 import { SearchLibros } from '../components/libro/SearchLibros';
 import { Modal } from '../components/Modal';
-import "../styles/components/libro/libro-page.css"
+import "../styles/pages/libro/libro-page.css"
 
 export const LibroPage = () => {
 
