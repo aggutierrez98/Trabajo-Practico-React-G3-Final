@@ -23,10 +23,9 @@ export const PersonaCard = ({ nombre, apellido, alias, email, _id: uid }) => {
 
     return (
 
-        <div >
-            <table className="estiloPersona">
+        <div className="estiloPersona">
             
-            <tr> 
+            <div>
             <label>Nombre: </label>{nombre}
 
             <label>Apellido: </label>{apellido}
@@ -34,9 +33,11 @@ export const PersonaCard = ({ nombre, apellido, alias, email, _id: uid }) => {
             <label>Alias: </label>{alias}
 
             <label>Email: </label>{email}
-            </tr>
-
-            <tr className="estiloPersonaTr">
+            
+            </div>
+            
+            <div className="estiloPersonaTr">
+            
             <button onClick={onBorrar}> <ion-icon name="trash"></ion-icon></button>
 
             <button onClick={onModal}> <ion-icon name="reload"></ion-icon></button>
@@ -48,8 +49,8 @@ export const PersonaCard = ({ nombre, apellido, alias, email, _id: uid }) => {
             }
 
             <LibrosPrestados id={uid} />
-            </tr>
-            </table>
+            </div>
+          
         </div>
     )
 }

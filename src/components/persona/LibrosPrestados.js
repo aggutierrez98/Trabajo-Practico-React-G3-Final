@@ -19,7 +19,7 @@ export const LibrosPrestados = ({ id }) => {
 
     return (
         <div>
-            <button onClick={onClick}> <ion-icon name="enter"></ion-icon></button>
+            <button onClick={onClick}> <ion-icon name="book"></ion-icon></button>
             
             {
                 (active) &&

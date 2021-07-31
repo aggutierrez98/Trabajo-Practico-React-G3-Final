@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { startCrearGenero } from '../../actions/generos';
 import { cerrarModal } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
-
+import "../../pages/css/generoPageStyle.css";
 // import "../../styles/components/form.css";
 
 const initialState = {
