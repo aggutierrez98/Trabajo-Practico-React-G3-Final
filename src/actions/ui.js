@@ -7,6 +7,13 @@ export const abrirModal = (id) => ({
     }
 });
 
+export const abrirModalLibrosPrestados = (id) => ({
+    type: types.modalOpenBorrowed,
+    payload: {
+        id
+    }
+});
+
 export const cerrarModal = () => ({
     type: types.modalClose
 });

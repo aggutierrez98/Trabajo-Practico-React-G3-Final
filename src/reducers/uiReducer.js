@@ -2,6 +2,7 @@ import { types } from "../types/types";
 
 const initialState = {
     modalOpen: false,
+    modalOpenBorrowed: false,
     id: "",
     filtered: false,
 }
@@ -23,9 +24,23 @@ export const uiReducer = (state = initialState, action) => {
                 modalOpen: true,
             };
 
+        case types.modalOpenBorrowed:
+
+            if (action.payload) {
+                return {
+                    modalOpenBorrowed: true,
+                    id: action.payload.id
+                }
+            }
+
+            return {
+                modalOpenBorrowed: true,
+            };
+
         case types.modalClose:
             return {
                 modalOpen: false,
+                modalOpenBorrowed: false,
             };
 
         case types.searchFinish:

@@ -33,13 +33,13 @@ export const LibroPage = () => {
     };
 
     return (
-        
+
         <div className="estiloLibro libro-page">
-                {
+            {
                 (modalOpen && !id) && (
                     <Modal component={FormAgregarLibros} modalOpen={modalOpen} />
                 )
-                }
+            }
             <div className="buscadores">
                 <div className="agregar-libro" >
                     <button onClick={onModal}><ion-icon name="add-circle"></ion-icon></button>
@@ -57,36 +57,36 @@ export const LibroPage = () => {
                     <th colSpan="4">Acciones</th>
                 </tr>
                 {
-                (!filtered) &&
-                libros?.map(libro => (
-                    <LibroCard
-                        key={libro._id}
-                        id={libro._id}
-                    />
-                ))
-            }
-            {
-                (!filtered) &&
-                (libros.length === 0) && (
-                    <h1>Cargando</h1>
-                )
-            }
+                    (!filtered) &&
+                    libros?.map(libro => (
+                        <LibroCard
+                            key={libro._id}
+                            id={libro._id}
+                        />
+                    ))
+                }
+                {
+                    (!filtered) &&
+                    (libros.length === 0) && (
+                        <h1>Cargando</h1>
+                    )
+                }
 
-            {
-                (filtered) &&
-                librosFiltrados?.map(libro => (
-                    <LibroCard
-                        key={libro._id}
-                        id={libro._id}
-                    />
-                ))
-            }
-            {
-                (filtered) &&
-                (librosFiltrados.length === 0) && (
-                    <h1>No se encuentra busqueda</h1>
-                )
-            }
+                {
+                    (filtered) &&
+                    librosFiltrados?.map(libro => (
+                        <LibroCard
+                            key={libro._id}
+                            id={libro._id}
+                        />
+                    ))
+                }
+                {
+                    (filtered) &&
+                    (librosFiltrados.length === 0) && (
+                        <h1>No se encuentra busqueda</h1>
+                    )
+                }
             </table>
 
 

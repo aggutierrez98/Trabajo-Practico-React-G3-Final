@@ -23,6 +23,7 @@ export const types = {
 
     //Ui
     modalOpen: "[ui] Montar modal",
+    modalOpenBorrowed: "[ui] Montar modal libros prestados",
     modalClose: "[ui] Desmontar modal",
     searchFinish: "[ui] Terminar busqueda"
 };

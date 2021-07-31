@@ -1,54 +1,66 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { startBorrarPersona } from '../../actions/personas';
-import { abrirModal } from '../../actions/ui';
+import { abrirModal, abrirModalLibrosPrestados } from '../../actions/ui';
 import { Modal } from '../Modal';
 import { FormActualizarPersona } from './FormActualizarPersona';
 import { LibrosPrestados } from './LibrosPrestados';
 import '../../pages/css/personaPageStyle.css';
+import { ModalLibrosPersona } from './ModalLibroPersonas';
 
 export const PersonaCard = ({ nombre, apellido, alias, email, _id: uid }) => {
 
     const dispatch = useDispatch();
 
-    const { modalOpen, id } = useSelector(state => state.ui);
+    const { modalOpen, modalOpenBorrowed, id } = useSelector(state => state.ui);
 
     const onBorrar = () => {
         dispatch(startBorrarPersona(uid))
     };
 
-    const onModal = () => {
+    const onModalActualizar = () => {
         dispatch(abrirModal(uid));
+    }
+
+    const onModalLibros = () => {
+        dispatch(abrirModalLibrosPrestados(uid));
     }
 
     return (
 
         <div >
             <table className="estiloPersona">
-            
-            <tr> 
-            <label>Nombre: </label>{nombre}
 
-            <label>Apellido: </label>{apellido}
+                <tr>
+                    <label>Nombre: </label>{nombre}
 
-            <label>Alias: </label>{alias}
+                    <label>Apellido: </label>{apellido}
 
-            <label>Email: </label>{email}
-            </tr>
+                    <label>Alias: </label>{alias}
 
-            <tr className="estiloPersonaTr">
-            <button onClick={onBorrar}> <ion-icon name="trash"></ion-icon></button>
+                    <label>Email: </label>{email}
+                </tr>
 
-            <button onClick={onModal}> <ion-icon name="reload"></ion-icon></button>
+                <tr className="estiloPersonaTr">
+                    <button onClick={onBorrar}> <ion-icon name="trash"></ion-icon></button>
 
-            {
-                (modalOpen && uid === id) && (
-                    <Modal component={FormActualizarPersona} id={uid} />
-                )
-            }
+                    <button onClick={onModalActualizar}> <ion-icon name="reload"></ion-icon></button>
 
-            <LibrosPrestados id={uid} />
-            </tr>
+                    {
+                        (modalOpen && uid === id) && (
+                            <Modal component={FormActualizarPersona} id={uid} />
+                        )
+                    }
+
+                    <button onClick={onModalLibros}> <ion-icon name="enter"></ion-icon></button>
+
+                    {
+                        (modalOpenBorrowed && uid === id) && (
+                            <ModalLibrosPersona component={LibrosPrestados} id={uid} />
+                        )
+                    }
+
+                </tr>
             </table>
         </div>
     )

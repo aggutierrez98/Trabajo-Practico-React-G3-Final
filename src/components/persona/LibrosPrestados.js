@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { LibroCard } from '../libro/LibroCard';
 
 export const LibrosPrestados = ({ id }) => {
@@ -9,18 +8,18 @@ export const LibrosPrestados = ({ id }) => {
 
     const [librosPersona, setlibrosPersona] = useState([]);
 
+    const dispatch = useDispatch();
+
     const [active, setActive] = useState(false);
 
-    const onClick = () => {
+    useEffect(() => {
         const nuevosLibros = libros.filter(libro => libro.persona_id === id);
         setlibrosPersona(nuevosLibros)
         setActive(true);
-    };
+    }, [dispatch, id, libros])
 
     return (
         <div>
-            <button onClick={onClick}> <ion-icon name="enter"></ion-icon></button>
-            
             {
                 (active) &&
 
@@ -31,7 +30,6 @@ export const LibrosPrestados = ({ id }) => {
                     />
                 ))
             }
-
         </div>
     )
 }
