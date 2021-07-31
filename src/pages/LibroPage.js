@@ -56,14 +56,37 @@ export const LibroPage = () => {
                     <th>Prestado A</th>
                     <th colSpan="4">Acciones</th>
                 </tr>
-            {
-                libros.map(libro => (
+                {
+                (!filtered) &&
+                libros?.map(libro => (
                     <LibroCard
-                    key={libro._id}
-                    id={libro._id}
+                        key={libro._id}
+                        id={libro._id}
                     />
-                    ))
-                }
+                ))
+            }
+            {
+                (!filtered) &&
+                (libros.length === 0) && (
+                    <h1>Cargando</h1>
+                )
+            }
+
+            {
+                (filtered) &&
+                librosFiltrados?.map(libro => (
+                    <LibroCard
+                        key={libro._id}
+                        id={libro._id}
+                    />
+                ))
+            }
+            {
+                (filtered) &&
+                (librosFiltrados.length === 0) && (
+                    <h1>No se encuentra busqueda</h1>
+                )
+            }
             </table>
 
 

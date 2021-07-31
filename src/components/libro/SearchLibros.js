@@ -27,7 +27,13 @@ export const SearchLibros = () => {
             const librosEncontrados = libros.filter(libro => libro.nombre.includes(libroBuscado));
             dispatch(filtrarLibros(librosEncontrados));
             dispatch(terminarBusqueda());
-        }
+        } 
+        // else {
+
+        //     const librosEncontrados = libros;
+        //     dispatch(filtrarLibros(librosEncontrados));
+        //     dispatch(terminarBusqueda());
+        // }
     }
 
     return (
