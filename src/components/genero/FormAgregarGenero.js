@@ -20,6 +20,7 @@ export const FormAgregarGenero = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log("Abriendo modal");
         dispatch(startCrearGenero(nombre));
         reset();
         dispatch(cerrarModal());
@@ -31,20 +32,24 @@ export const FormAgregarGenero = () => {
 
             <form onSubmit={handleSubmit}>
 
-                <label for="nombre" class="colocar_nombre">Agregar un nuevo género<span>*</span></label>
+                <label htmlFor="nombre" className="colocar_nombre">Agregar un nuevo género<span>*</span></label>
 
                 <div className="formGenero">
-                    <tr>
-                        <td><input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="¿Cuál es el nuevo género?" autoComplete="off"></input></td>
-                        <td><button type="submit"> Ingresar género </button></td>
-                    </tr>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td><input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="¿Cuál es el nuevo género?" autoComplete="off"></input></td>
+                                <td><button type="submit"> <ion-icon name="add-circle"></ion-icon> </button></td>
+                            </tr>
+                        </thead>
+                    </table>
                 </div>
 
 
             </form>
 
 
-            <p class="aviso"><span> * </span>Campos obligatorios.</p>
+            <p className="aviso"><span> * </span>Campos obligatorios.</p>
 
             <hr></hr>
 

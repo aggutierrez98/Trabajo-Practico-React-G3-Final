@@ -3,6 +3,7 @@ import { types } from "../types/types";
 const initialState = {
     modalOpen: false,
     id: "",
+    filtered: false,
 }
 
 export const uiReducer = (state = initialState, action) => {
@@ -25,6 +26,11 @@ export const uiReducer = (state = initialState, action) => {
         case types.modalClose:
             return {
                 modalOpen: false,
+            };
+
+        case types.searchFinish:
+            return {
+                filtered: true,
             };
 
         default:

@@ -48,8 +48,9 @@ export const FormAgregarLibros = () => {
                 <span> *</span>
             </div>
             <input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar nombre" autoComplete="off" required></input>
-
-            <label className="form-label">Descripcion</label>
+            <div className="form-label">
+                <label>Descripcion</label>
+            </div>
             <input type="text" name="descripcion" onChange={handleInputChange} value={descripcion} placeholder="Ingresar descripcion" autoComplete="off"></input>
 
             <div className="form-label">

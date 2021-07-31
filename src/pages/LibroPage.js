@@ -4,12 +4,12 @@ import { startCargarGeneros } from '../actions/generos';
 import { startCargarLibros } from '../actions/libros';
 import { startCargarPersonas } from '../actions/personas';
 import { abrirModal } from '../actions/ui';
-import { BuscarPorGenero } from '../components/genero/BuscarPorGenero';
+import { BuscarPorGenero } from '../components/libro/BuscarPorGenero';
 import { FormAgregarLibros } from '../components/libro/FormAgregarLibros';
 import { LibroCard } from '../components/libro/LibroCard';
 import { SearchLibros } from '../components/libro/SearchLibros';
 import { Modal } from '../components/Modal';
-
+import "../styles/pages/libro/libro-page.css"
 
 export const LibroPage = () => {
 
@@ -17,6 +17,8 @@ export const LibroPage = () => {
 
     const { modalOpen, id } = useSelector(state => state.ui)
 
+    const { filtered } = useSelector(state => state.ui)
+    const { librosFiltrados } = useSelector(state => state.libro);
     const { libros } = useSelector(state => state.libro);
 
     useEffect(() => {
@@ -30,11 +32,19 @@ export const LibroPage = () => {
     };
 
     return (
-        <div className="contactForm">
+        <div className="libro-page">
 
-            <SearchLibros />
+            <div className="buscadores">
+                <div className="agregar-libro" >
+                    <button onClick={onModal}><ion-icon name="add-circle"></ion-icon></button>
+                    <p>Agregar</p>
+                </div>
+                <SearchLibros />
+                <BuscarPorGenero />
+            </div>
 
-            <button onClick={onModal}>Agregar Libro</button>
+
+            <hr />
             {
                 (modalOpen && !id) && (
                     <Modal component={FormAgregarLibros} modalOpen={modalOpen} />
@@ -44,6 +54,7 @@ export const LibroPage = () => {
             <h1>LibroPage</h1>
 
             {
+                (!filtered) &&
                 libros?.map(libro => (
                     <LibroCard
                         key={libro._id}
@@ -51,8 +62,28 @@ export const LibroPage = () => {
                     />
                 ))
             }
+            {
+                (!filtered) &&
+                (libros.length === 0) && (
+                    <h1>Cargando</h1>
+                )
+            }
 
-            <BuscarPorGenero />
+            {
+                (filtered) &&
+                librosFiltrados?.map(libro => (
+                    <LibroCard
+                        key={libro._id}
+                        id={libro._id}
+                    />
+                ))
+            }
+            {
+                (filtered) &&
+                (librosFiltrados.length === 0) && (
+                    <h1>No se encuentra busqueda</h1>
+                )
+            }
 
         </div>
     )
