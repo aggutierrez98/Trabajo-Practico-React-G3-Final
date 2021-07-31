@@ -22,6 +22,12 @@
     display: flex;
 }
 
+.generoSelect {
+    border:1px solid #ab4493!important ;
+    border-radius: 5px;     
+
+}
+
 input{
 	background-color: #fbfbfb; 
 	width: 260px; 
@@ -158,4 +164,13 @@ table{
   
   .tooltip:hover .tooltiptext {
     visibility: visible;
+  }
+
+  button ion-icon {
+    cursor: pointer;
+    width: 70%;
+    height: 70%;
+    transition: color 0.2s;
+    margin: 0px;
+    padding: 0px;
   }
