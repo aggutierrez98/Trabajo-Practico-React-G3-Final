@@ -23,35 +23,42 @@ export const PrestarDevolverLibro = ({ uid }) => {
     };
 
     return (
-        <div>
+        <>
+        <td className="prestarLibro">
+
             <select value={persona} onChange={personaChange}>
                 <option hidden> Prestar a </option>
                 {
                     personas.map(persona => (
                         <option
-                            value={persona._id}
-                            key={persona._id}
-                            onSelect={personaChange}
+                        value={persona._id}
+                        key={persona._id}
+                        onSelect={personaChange}
                         >
                             {persona.nombre}
                         </option>
                     ))
                 }
             </select>
-
-            <button onClick={onPrestamo}>
-                Ok
+            <button className="confirmarCambio" onClick={onPrestamo}>
+                confirmar
             </button>
+        </td>
+        <td>
 
-            <br></br>
-            <br></br>
+        <button
+            onClick={onDevolver}
+        >
+        <span className="tooltip">-
+        <span class="tooltiptext">Devolver</span>
+        </span>
+        <ion-icon name="arrow-undo"></ion-icon>
+        <span className="tooltip">-
+            <span class="tooltiptext">Devolver</span>
+        </span>
+        </button>
 
-            <button
-                onClick={onDevolver}
-            >
-                Devolver
-            </button>
-
-        </div>
+        </td>
+        </>
     )
 }

@@ -105,8 +105,7 @@ h2 {
 }
 
 .cardGenero tr td {
-  margin-left: 50%;
-  margin-right: 15px;
+  margin: 15px;
 }
 
 .formGenero {

@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { startCargarGeneros } from '../actions/generos';
 import { startCargarLibros } from '../actions/libros';
 import { startCargarPersonas } from '../actions/personas';
 import { abrirModal } from '../actions/ui';
-import { BuscarPorGenero } from '../components/libro/BuscarPorGenero';
+import { BuscarPorGenero } from '../components/genero/BuscarPorGenero';
 import { FormAgregarLibros } from '../components/libro/FormAgregarLibros';
 import { LibroCard } from '../components/libro/LibroCard';
 import { SearchLibros } from '../components/libro/SearchLibros';
 import { Modal } from '../components/Modal';
 import "../styles/pages/libro/libro-page.css"
+import './css/libroPageStyle.css'
 
 export const LibroPage = () => {
 
@@ -32,8 +33,13 @@ export const LibroPage = () => {
     };
 
     return (
-        <div className="libro-page">
-
+        
+        <div className="estiloLibro libro-page">
+                {
+                (modalOpen && !id) && (
+                    <Modal component={FormAgregarLibros} modalOpen={modalOpen} />
+                )
+                }
             <div className="buscadores">
                 <div className="agregar-libro" >
                     <button onClick={onModal}><ion-icon name="add-circle"></ion-icon></button>
@@ -43,17 +49,14 @@ export const LibroPage = () => {
                 <BuscarPorGenero />
             </div>
 
-
-            <hr />
-            {
-                (modalOpen && !id) && (
-                    <Modal component={FormAgregarLibros} modalOpen={modalOpen} />
-                )
-            }
-
-            <h1>LibroPage</h1>
-
-            {
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Prestado A</th>
+                    <th colSpan="4">Acciones</th>
+                </tr>
+                {
                 (!filtered) &&
                 libros?.map(libro => (
                     <LibroCard
@@ -84,6 +87,8 @@ export const LibroPage = () => {
                     <h1>No se encuentra busqueda</h1>
                 )
             }
+            </table>
+
 
         </div>
     )

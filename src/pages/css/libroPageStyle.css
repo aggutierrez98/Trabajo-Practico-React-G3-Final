@@ -1,0 +1,176 @@
+
+.estiloLibro{
+    width: 75%; 
+    height: auto;
+    margin: 80px auto;
+	border-radius: 10px;  
+	padding: 20px;  
+    background-color: #fbfbfb; 
+}
+
+.estiloLibro h1, h2{
+    color: #ab4493; 
+    text-align: center;
+}
+
+.estiloLibro hr{
+    border-width: 2px;
+    border-color: #ab4493;
+}
+
+.encabezado{
+    display: flex;
+}
+
+.generoSelect {
+    border:1px solid #ab4493!important ;
+    border-radius: 5px;     
+
+}
+
+input{
+	background-color: #fbfbfb; 
+	width: 260px; 
+	height: 40px; 
+	border-radius: 5px 0px 0px 5px;     
+	border-style: solid; 
+	border-width: 1px; 
+	border-color: #ab4493; 
+	margin-top: 10px;  
+	padding-left: 10px;
+    margin-bottom: 20px; 
+}
+
+label{
+    display: block; 
+    float: center; 	
+  }
+
+  button{
+	height: 45px; 
+	padding-left: 5px;
+	padding-right: 5px; 	
+	margin-bottom: 20px; 
+	margin-top: 10px; 	
+	background-color: #ab4493; 
+	border-color: #ab4493; 
+	border-style: solid; 
+	border-radius: 10px;	
+	width: 80px;   
+    cursor: pointer;
+    color: #ffff; 
+}
+
+.buscar{
+	border-radius: 0px 10px 10px 0px;	
+}
+
+button:hover{
+    background-color: #8a3676; 
+    border-color: #7c306a; 
+}
+
+span{
+	color: #ab4493; 
+}
+
+
+.aviso{
+	font-size: 13px;  
+	color: #0e0e0e;  
+}
+
+p{
+	font-size: 14px; 
+	color: #0e0e0e; 
+}
+
+::-webkit-input-placeholder {
+    color: #a8a8a8;
+   }
+   
+
+.estiloLibro input:focus{
+       outline:0;
+       border: 1px solid #97d848;
+   }
+
+.cardLibro {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #ab4493; 
+	border-style: solid; 
+	border-radius: 10px;
+    margin: 30px;
+}
+
+.cardLibro button{
+   height: 50px;
+   width: 60px;
+}
+
+.cardLibro tr{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardLibro tr td{
+    margin-left: 50%;
+}
+.confirmarCambio {
+    height: fit-content;
+    width: fit-content;
+}
+.prestarLibro{
+    display: flex;
+    margin: 20px auto;
+}
+.prestarLibro select{
+    height: fit-content ;
+    height: 30px;
+}
+.prestarLibro button{
+    margin:0px;
+	border-radius: 0px 10px 10px 0px;
+    height: 30px;
+}
+table{
+    margin: 0 auto;
+}
+.listado table, th, td {
+    /* border: 5px solid black; */
+  }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  button ion-icon {
+    cursor: pointer;
+    width: 60%;
+    height: 60%;
+    transition: color 0.2s;
+    margin: 0px;
+    padding: 0px;
+  }
