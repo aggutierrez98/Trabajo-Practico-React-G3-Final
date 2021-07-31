@@ -46,7 +46,7 @@ label{
     float: center; 	
   }
 
-  .bottonLibro, button{
+  .bottonLibro{
 	height: 45px; 
 	padding-left: 5px;
 	padding-right: 5px; 	
@@ -58,14 +58,13 @@ label{
 	border-radius: 10px;	
 	width: 80px;   
     cursor: pointer;
-    color: #ffff; 
 }
 
 .buscar{
 	border-radius: 0px 10px 10px 0px;	
 }
 
-.bottonLibro:hover{
+, .bottonLibro:hover{
     background-color: #8a3676; 
     border-color: #7c306a; 
 }
@@ -166,11 +165,13 @@ table{
     visibility: visible;
   }
 
-  button ion-icon {
+  button ion-icon .iconoInterno {
     cursor: pointer;
     width: 60%;
     height: 60%;
     transition: color 0.2s;
     margin: 0px;
     padding: 0px;
+    z-index: 0;
+    color: #e7f0f0;
   }
