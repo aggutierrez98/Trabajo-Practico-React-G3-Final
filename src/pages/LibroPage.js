@@ -56,27 +56,50 @@ export const LibroPage = () => {
         <div className="estiloLibro">
             <h1>LibroPage</h1>
             <h2> Buscar libro </h2>
-
             <div className="encabezado">   
+                <table className="listado">
+                    <tr>
+                        <th>Buscar Libro por nombre</th>
+                        <th>Buscar por categoria</th>
+                        <th>Agregar libro</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input
+                                type="text"
+                                onChange={buscarLibro}
+                            />
+                            <button onClick={buscarLibroSeleccionado} className="buscar">
+                            <span className="tooltip">-
+                            <span class="tooltiptext">Buscar</span>
+                            </span>
+                                <ion-icon name="search"></ion-icon>
+                            <span className="tooltip">-
+                            <span class="tooltiptext">Buscar</span>
+                            </span>
+                            </button>
+                        </td>
+                        <td>
+                        <BuscarPorGenero />
+
+                        </td>
+                        <td>
+                            <button onClick={onModal}>                    
+                                <ion-icon name="person-add"></ion-icon>
+                            </button>
+                            {
+                                (modalOpen && !id) && (
+                                <Modal component={FormAgregarLibros} modalOpen={modalOpen} />
+                                )
+                            }
+                        </td>
+                    </tr>
+
+                </table>
+
                 {/* <SearchLibros /> */}
-                <input
-                    type="text"
-                    onChange={buscarLibro}
-                />
-                <button
-                    onClick={buscarLibroSeleccionado}
-                >
-                    Buscar
-                </button>
-                <button onClick={onModal}>
-                    
-                    <ion-icon name="person-add"></ion-icon>
-                </button>
-                {
-                    (modalOpen && !id) && (
-                        <Modal component={FormAgregarLibros} modalOpen={modalOpen} />
-                        )
-                    }
+
+
             </div>
             <hr />
 
@@ -97,7 +120,6 @@ export const LibroPage = () => {
                 }
             </table>
 
-            <BuscarPorGenero />
 
         </div>
     )

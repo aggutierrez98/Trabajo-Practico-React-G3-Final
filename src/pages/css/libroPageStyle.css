@@ -133,6 +133,9 @@ p{
 table{
     margin: 0 auto;
 }
+.listado table, th, td {
+    /* border: 5px solid black; */
+  }
 
 .tooltip {
     position: relative;
