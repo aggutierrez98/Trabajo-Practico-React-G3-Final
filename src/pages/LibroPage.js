@@ -9,99 +9,45 @@ import { FormAgregarLibros } from '../components/libro/FormAgregarLibros';
 import { LibroCard } from '../components/libro/LibroCard';
 import { SearchLibros } from '../components/libro/SearchLibros';
 import { Modal } from '../components/Modal';
+import "../styles/pages/libro/libro-page.css"
 import './css/libroPageStyle.css'
 
 export const LibroPage = () => {
 
-    const [init, setInit] = useState([])
-    const [filtros, setFiltros] = useState([])
     const dispatch = useDispatch();
 
     const { modalOpen, id } = useSelector(state => state.ui)
 
+    const { filtered } = useSelector(state => state.ui)
+    const { librosFiltrados } = useSelector(state => state.libro);
     const { libros } = useSelector(state => state.libro);
-    // let { filtros } = useSelector(state => state.libro);
-    // setFiltros(libros);
-    // useSelector(state => console.log(state))
+
     useEffect(() => {
-        console.log(libros)
         dispatch(startCargarLibros());
         dispatch(startCargarPersonas());
         dispatch(startCargarGeneros());
-        setFiltros(libros);
     }, [dispatch]);
-    
 
     const onModal = () => {
         dispatch(abrirModal());
     };
 
-    const buscarLibro = (e) => {
-        e.preventDefault()
-        let {value} = e.target
-        setInit(value)
-    }
-
-    const buscarLibroSeleccionado = () => {
-        console.log(init)
-        console.log(filtros)
-        let nombreMayus = init.toUpperCase()
-        let nuevosFiltros = filtros.filter((a) => a.nombre === nombreMayus);
-        console.log(nuevosFiltros)
-        setFiltros(nuevosFiltros);
-    }
-
     return (
         
-        <div className="estiloLibro">
-            <h1>LibroPage</h1>
-            <h2> Buscar libro </h2>
-            <div className="encabezado">   
-                <table className="listado">
-                    <tr>
-                        <th>Buscar Libro por nombre</th>
-                        <th>Buscar por categoria</th>
-                        <th>Agregar libro</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input
-                                type="text"
-                                onChange={buscarLibro}
-                            />
-                            <button onClick={buscarLibroSeleccionado} className="buscar">
-                            <span className="tooltip">-
-                            <span class="tooltiptext">Buscar</span>
-                            </span>
-                                <ion-icon name="search"></ion-icon>
-                            <span className="tooltip">-
-                            <span class="tooltiptext">Buscar</span>
-                            </span>
-                            </button>
-                        </td>
-                        <td>
-                        <BuscarPorGenero />
-
-                        </td>
-                        <td>
-                            <button onClick={onModal}>                    
-                                <ion-icon name="person-add"></ion-icon>
-                            </button>
-                            {
-                                (modalOpen && !id) && (
-                                <Modal component={FormAgregarLibros} modalOpen={modalOpen} />
-                                )
-                            }
-                        </td>
-                    </tr>
-
-                </table>
-
-                {/* <SearchLibros /> */}
-
-
+        <div className="estiloLibro libro-page">
+                {
+                (modalOpen && !id) && (
+                    <Modal component={FormAgregarLibros} modalOpen={modalOpen} />
+                )
+                }
+            <div className="buscadores">
+                <div className="agregar-libro" >
+                    <button onClick={onModal}><ion-icon name="add-circle"></ion-icon></button>
+                    <p>Agregar</p>
+                </div>
+                <SearchLibros />
+                <BuscarPorGenero />
             </div>
-            <hr />
 
             <table>
                 <tr>
@@ -111,7 +57,7 @@ export const LibroPage = () => {
                     <th colSpan="4">Acciones</th>
                 </tr>
             {
-                filtros.map(libro => (
+                libros.map(libro => (
                     <LibroCard
                     key={libro._id}
                     id={libro._id}
