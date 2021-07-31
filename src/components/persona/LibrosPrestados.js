@@ -19,12 +19,8 @@ export const LibrosPrestados = ({ id }) => {
 
     return (
         <div>
-            <br></br>
-            <button
-                onClick={onClick}
-            >
-                Cargar libros de la persona
-            </button>
+            <button onClick={onClick}> <ion-icon name="enter"></ion-icon></button>
+            
             {
                 (active) &&
 

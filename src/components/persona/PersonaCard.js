@@ -5,6 +5,7 @@ import { abrirModal } from '../../actions/ui';
 import { Modal } from '../Modal';
 import { FormActualizarPersona } from './FormActualizarPersona';
 import { LibrosPrestados } from './LibrosPrestados';
+import '../../pages/css/personaPageStyle.css';
 
 export const PersonaCard = ({ nombre, apellido, alias, email, _id: uid }) => {
 
@@ -22,41 +23,33 @@ export const PersonaCard = ({ nombre, apellido, alias, email, _id: uid }) => {
 
     return (
 
-        <div>
-            <h2>Nombre :</h2>
-            <p>{nombre}</p>
+        <div >
+            <table className="estiloPersona">
+            
+            <tr> 
+            <label>Nombre: </label>{nombre}
 
-            <h2>Apellido: </h2>
-            <p>{apellido}</p>
+            <label>Apellido: </label>{apellido}
 
-            <h2>Alias :</h2>
-            <p>{alias}</p>
+            <label>Alias: </label>{alias}
 
-            <h2>Email: </h2>
-            <p>{email}</p>
+            <label>Email: </label>{email}
+            </tr>
 
-            <h3>Borrar persona</h3>
-            <button
-                onClick={onBorrar}
-            >
-                Borrar
-            </button>
+            <tr className="estiloPersonaTr">
+            <button onClick={onBorrar}> <ion-icon name="trash"></ion-icon></button>
 
-            <h3>Actualizar</h3>
-
-
-            <button onClick={onModal}>Actualizar Persona</button>
+            <button onClick={onModal}> <ion-icon name="reload"></ion-icon></button>
 
             {
                 (modalOpen && uid === id) && (
                     <Modal component={FormActualizarPersona} id={uid} />
                 )
-
             }
 
             <LibrosPrestados id={uid} />
-
-            <br></br>
+            </tr>
+            </table>
         </div>
     )
 }

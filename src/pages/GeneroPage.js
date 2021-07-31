@@ -25,7 +25,7 @@ export const GeneroPage = () => {
 
         <div className="estiloGenero">
 
-                <h1>Página de Géneros </h1>
+                <h1>Página de Géneros</h1>
 
                 <FormAgregarGenero />
 

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { startCrearpersona } from '../../actions/personas';
 import { cerrarModal } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
+import '../../pages/css/personaPageStyle.css';
 
 export const FormAgregarPersona = () => {
 
