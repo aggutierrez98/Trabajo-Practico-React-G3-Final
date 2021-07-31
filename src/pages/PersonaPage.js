@@ -28,32 +28,20 @@ export const PersonaPage = () => {
 
     return (
         <div className="estiloFormularioPersona">
-            <table>
-            <thead>
-            <th>
+            
             
             <h1>Página de Personas</h1>
                 
-            </th>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
+            
             <button className="estiloBotonAgregarPersona" onClick={onModal}> <ion-icon name="add-circle"></ion-icon></button>
             {
                 (modalOpen && !id) && (
                     <Modal component={FormAgregarPersona} modalOpen={modalOpen} />
                 )
             }
-                </td>
-                <td>
+                
                     <p>Agregar nueva persona</p>
-                </td>
-            </tr>
-            </tbody>
-            </table>
-
-            <hr></hr>
+            
 
             <h2>Lista de personas existentes</h2>
             {

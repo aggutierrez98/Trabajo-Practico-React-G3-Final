@@ -4,7 +4,7 @@ import { startCargarGeneros } from '../actions/generos';
 import { FormAgregarGenero } from '../components/genero/FormAgregarGenero';
 import { GeneroCard } from '../components/genero/GeneroCard';
 // import "../styles/pages/pages.css";
-import "../styles/pages/genero/generoPageStyle.css"
+import "./css/generoPageStyle.css"
 
 
 export const GeneroPage = () => {

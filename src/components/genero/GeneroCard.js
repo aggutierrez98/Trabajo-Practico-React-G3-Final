@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { startBorrarGenero } from '../../actions/generos';
+import "../../pages/css/generoPageStyle.css";
 
 export const GeneroCard = ({ nombre, _id: id }) => {
 

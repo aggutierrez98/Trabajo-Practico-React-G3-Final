@@ -26,7 +26,7 @@ export const BuscarPorGenero = () => {
         <div className="search-genero">
             {/* <h2>Buscar libros por genero: </h2> */}
 
-            <select class="generoSelect" value={genero} onChange={generoChange}>
+            <select className="generoSelect" value={genero} onChange={generoChange}>
                 <option hidden> Seleccione un genero </option>
                 {
                     generos.map(genero => (
@@ -41,7 +41,7 @@ export const BuscarPorGenero = () => {
                 }
             </select>
 
-            <button onClick={buscarLibros}>
+            <button className="bottonLibro" onClick={buscarLibros}>
                 Buscar
             </button>
 

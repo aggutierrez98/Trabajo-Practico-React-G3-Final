@@ -28,40 +28,36 @@ export const PersonaCard = ({ nombre, apellido, alias, email, _id: uid }) => {
 
     return (
 
-        <div >
-            <table className="estiloPersona">
+        <div className="estiloPersona">
+            <div>
+                <label>Nombre: </label>{nombre}
 
-                <tr>
-                    <label>Nombre: </label>{nombre}
+                <label>Apellido: </label>{apellido}
 
-                    <label>Apellido: </label>{apellido}
+                <label>Alias: </label>{alias}
 
-                    <label>Alias: </label>{alias}
+                <label>Email: </label>{email}
+            </div>
 
-                    <label>Email: </label>{email}
-                </tr>
+            <div className="estiloPersonaTr">
+                <button onClick={onBorrar}> <ion-icon name="trash"></ion-icon></button>
 
-                <tr className="estiloPersonaTr">
-                    <button onClick={onBorrar}> <ion-icon name="trash"></ion-icon></button>
+                <button onClick={onModalActualizar}> <ion-icon name="reload"></ion-icon></button>
 
-                    <button onClick={onModalActualizar}> <ion-icon name="reload"></ion-icon></button>
+                {
+                    (modalOpen && uid === id) && (
+                        <Modal component={FormActualizarPersona} id={uid} />
+                    )
+                }
 
-                    {
-                        (modalOpen && uid === id) && (
-                            <Modal component={FormActualizarPersona} id={uid} />
-                        )
-                    }
+                <button onClick={onModalLibros}> <ion-icon name="enter"></ion-icon></button>
 
-                    <button onClick={onModalLibros}> <ion-icon name="enter"></ion-icon></button>
-
-                    {
-                        (modalOpenBorrowed && uid === id) && (
-                            <ModalLibrosPersona component={LibrosPrestados} id={uid} />
-                        )
-                    }
-
-                </tr>
-            </table>
+                {
+                    (modalOpenBorrowed && uid === id) && (
+                        <ModalLibrosPersona component={LibrosPrestados} id={uid} />
+                    )
+                }
+            </div>
         </div>
     )
 }

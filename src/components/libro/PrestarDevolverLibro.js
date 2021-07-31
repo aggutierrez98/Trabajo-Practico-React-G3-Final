@@ -24,41 +24,42 @@ export const PrestarDevolverLibro = ({ uid }) => {
 
     return (
         <>
-        <td className="prestarLibro">
+            <td className="prestarLibro">
 
-            <select value={persona} onChange={personaChange}>
-                <option hidden> Prestar a </option>
-                {
-                    personas.map(persona => (
-                        <option
-                        value={persona._id}
-                        key={persona._id}
-                        onSelect={personaChange}
-                        >
-                            {persona.nombre}
-                        </option>
-                    ))
-                }
-            </select>
-            <button className="confirmarCambio" onClick={onPrestamo}>
-                confirmar
-            </button>
-        </td>
-        <td>
+                <select value={persona} onChange={personaChange}>
+                    <option hidden> Prestar a </option>
+                    {
+                        personas.map(persona => (
+                            <option
+                                value={persona._id}
+                                key={persona._id}
+                                onSelect={personaChange}
+                            >
+                                {persona.nombre}
+                            </option>
+                        ))
+                    }
+                </select>
+                <button className="bottonLibro" onClick={onPrestamo}>
+                    confirmar
+                </button>
+            </td>
+            <td>
 
-        <button
-            onClick={onDevolver}
-        >
-        <span className="tooltip">-
-        <span class="tooltiptext">Devolver</span>
-        </span>
-        <ion-icon name="arrow-undo"></ion-icon>
-        <span className="tooltip">-
-            <span class="tooltiptext">Devolver</span>
-        </span>
-        </button>
+                <button
+                    onClick={onDevolver}
+                    className="bottonLibro"
+                >
+                    <span className="tooltip">-
+                        <span className="tooltiptext">Devolver</span>
+                    </span>
+                    <ion-icon name="arrow-undo"></ion-icon>
+                    <span className="tooltip">-
+                        <span className="tooltiptext">Devolver</span>
+                    </span>
+                </button>
 
-        </td>
+            </td>
         </>
     )
 }

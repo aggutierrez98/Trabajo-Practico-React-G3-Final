@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { startCargarGeneros } from '../actions/generos';
 import { startCargarLibros } from '../actions/libros';
@@ -9,7 +9,6 @@ import { FormAgregarLibros } from '../components/libro/FormAgregarLibros';
 import { LibroCard } from '../components/libro/LibroCard';
 import { SearchLibros } from '../components/libro/SearchLibros';
 import { Modal } from '../components/Modal';
-import "../styles/pages/libro/libro-page.css"
 import './css/libroPageStyle.css'
 
 export const LibroPage = () => {
@@ -50,43 +49,47 @@ export const LibroPage = () => {
             </div>
 
             <table>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Descripcion</th>
-                    <th>Prestado A</th>
-                    <th colSpan="4">Acciones</th>
-                </tr>
-                {
-                    (!filtered) &&
-                    libros?.map(libro => (
-                        <LibroCard
-                            key={libro._id}
-                            id={libro._id}
-                        />
-                    ))
-                }
-                {
-                    (!filtered) &&
-                    (libros.length === 0) && (
-                        <h1>Cargando</h1>
-                    )
-                }
+                <tbody>
 
-                {
-                    (filtered) &&
-                    librosFiltrados?.map(libro => (
-                        <LibroCard
-                            key={libro._id}
-                            id={libro._id}
-                        />
-                    ))
-                }
-                {
-                    (filtered) &&
-                    (librosFiltrados.length === 0) && (
-                        <h1>No se encuentra busqueda</h1>
-                    )
-                }
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Prestado A</th>
+                        <th colSpan="4">Acciones</th>
+                    </tr>
+                    {
+                        (!filtered) &&
+                        libros?.map(libro => (
+                            <LibroCard
+                                key={libro._id}
+                                id={libro._id}
+                            />
+                        ))
+                    }
+                    {
+                        (!filtered) &&
+                        (libros.length === 0) && (
+                            <span>Cargando</span>
+                        )
+                    }
+
+                    {
+                        (filtered) &&
+                        librosFiltrados?.map(libro => (
+                            <LibroCard
+                                key={libro._id}
+                                id={libro._id}
+                            />
+                        ))
+                    }
+                    {
+                        (filtered) &&
+                        (librosFiltrados.length === 0) && (
+                            <span>No se encuentra busqueda</span>
+                        )
+                    }
+                </tbody>
+
             </table>
 
 

@@ -48,43 +48,44 @@ export const LibroCard = ({ id: uid }) => {
             <td>{descripcion}</td>
             <td>
                 {
-                    persona ? `${persona.nombre}` :  `No está prestado`                
+                    persona ? `${persona.nombre}` : `No está prestado`
                 }
             </td>
-            
-                <PrestarDevolverLibro uid={uid} />
+
+            <PrestarDevolverLibro uid={uid} />
             <td>
-            <button
-                onClick={onBorrar}
+                <button
+                    className="bottonLibro"
+                    onClick={onBorrar}
                 >
-                <span className="tooltip">-
-                <span class="tooltiptext">Borrar</span>
-                </span>
-                <ion-icon name="trash"></ion-icon>
-                <span className="tooltip">-
-                <span class="tooltiptext">Borrar</span>
-                </span>
+                    <span className="tooltip">-
+                        <span className="tooltiptext">Borrar</span>
+                    </span>
+                    <ion-icon name="trash"></ion-icon>
+                    <span className="tooltip">-
+                        <span className="tooltiptext">Borrar</span>
+                    </span>
 
-            </button>                
+                </button>
             </td>
             <td>
 
-            <button onClick={onModal}>
-                <span className="tooltip">-
-                <span class="tooltiptext">Refrescar</span>
-                </span>
-                <ion-icon name="refresh-circle"></ion-icon>
-                <span className="tooltip">-
-                <span class="tooltiptext">Refrescar</span>
-                </span>
+                <button className="bottonLibro" onClick={onModal}>
+                    <span className="tooltip">-
+                        <span className="tooltiptext">Refrescar</span>
+                    </span>
+                    <ion-icon name="refresh-circle"></ion-icon>
+                    <span className="tooltip">-
+                        <span className="tooltiptext">Refrescar</span>
+                    </span>
                 </button>
-            {
-                (modalOpen && uid === id) && (
-                    <Modal component={FormActualizarLibro} id={uid} />
+                {
+                    (modalOpen && uid === id) && (
+                        <Modal component={FormActualizarLibro} id={uid} />
                     )
-                    
+
                 }
-                </td>
+            </td>
 
         </tr>
     )
