@@ -53,7 +53,6 @@ export const SearchLibros = () => {
             <button
                 type="submit"
                 className="bottonLibro"
-                
             >
                 Buscar...
             </button>

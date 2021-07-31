@@ -58,6 +58,8 @@ label{
 	border-radius: 10px;	
 	width: 80px;   
     cursor: pointer;
+    color: #e7f0f0;
+
 }
 
 .buscar{
@@ -102,6 +104,7 @@ p{
 	border-style: solid; 
 	border-radius: 10px;
     margin: 30px;
+
 }
 
 .cardLibro button{
@@ -165,7 +168,8 @@ table{
     visibility: visible;
   }
 
-  button ion-icon .iconoInterno {
+                
+  .bottonLibro ion-icon  {
     cursor: pointer;
     width: 60%;
     height: 60%;
@@ -173,5 +177,4 @@ table{
     margin: 0px;
     padding: 0px;
     z-index: 0;
-    color: #e7f0f0;
   }
