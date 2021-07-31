@@ -55,6 +55,7 @@ export const LibroCard = ({ id: uid }) => {
                 <PrestarDevolverLibro uid={uid} />
             <td>
             <button
+            className="bottonLibro"
                 onClick={onBorrar}
                 >
                 <span className="tooltip">-
@@ -69,7 +70,7 @@ export const LibroCard = ({ id: uid }) => {
             </td>
             <td>
 
-            <button onClick={onModal}>
+            <button className="bottonLibro" onClick={onModal}>
                 <span className="tooltip">-
                 <span class="tooltiptext">Refrescar</span>
                 </span>

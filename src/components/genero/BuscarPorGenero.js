@@ -41,7 +41,7 @@ export const BuscarPorGenero = () => {
                 }
             </select>
 
-            <button onClick={buscarLibros}>
+            <button className="bottonLibro" onClick={buscarLibros}>
                 Buscar
             </button>
 

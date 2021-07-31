@@ -52,7 +52,8 @@ export const SearchLibros = () => {
 
             <button
                 type="submit"
-                className="buscar"
+                className="bottonLibro"
+                
             >
                 Buscar...
             </button>

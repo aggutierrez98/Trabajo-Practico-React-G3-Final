@@ -46,7 +46,7 @@ label{
     float: center; 	
   }
 
-  button{
+  .bottonLibro, button{
 	height: 45px; 
 	padding-left: 5px;
 	padding-right: 5px; 	
@@ -65,7 +65,7 @@ label{
 	border-radius: 0px 10px 10px 0px;	
 }
 
-button:hover{
+.bottonLibro:hover{
     background-color: #8a3676; 
     border-color: #7c306a; 
 }

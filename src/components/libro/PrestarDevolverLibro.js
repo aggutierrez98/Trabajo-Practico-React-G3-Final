@@ -40,7 +40,7 @@ export const PrestarDevolverLibro = ({ uid }) => {
                     ))
                 }
             </select>
-            <button className="confirmarCambio" onClick={onPrestamo}>
+            <button  className="bottonLibro" onClick={onPrestamo}>
                 confirmar
             </button>
         </td>
@@ -48,6 +48,7 @@ export const PrestarDevolverLibro = ({ uid }) => {
 
         <button
             onClick={onDevolver}
+            className="bottonLibro"
         >
         <span className="tooltip">-
         <span class="tooltiptext">Devolver</span>
