@@ -168,8 +168,8 @@ table{
 
   button ion-icon {
     cursor: pointer;
-    width: 70%;
-    height: 70%;
+    width: 60%;
+    height: 60%;
     transition: color 0.2s;
     margin: 0px;
     padding: 0px;
