@@ -6,7 +6,6 @@ import { abrirModal } from '../actions/ui';
 import { Modal } from '../components/Modal';
 import { FormAgregarPersona } from '../components/persona/FormAgregarPersona';
 import { PersonaCard } from '../components/persona/PersonaCard';
-// import './css/pages.css';
 import './css/personaPageStyle.css';
 
 export const PersonaPage = () => {
@@ -28,20 +27,20 @@ export const PersonaPage = () => {
 
     return (
         <div className="estiloFormularioPersona">
-            
-            
+
+
             <h1>Página de Personas</h1>
-                
-            
-            <button className="estiloBotonAgregarPersona" onClick={onModal}> <ion-icon name="add-circle"></ion-icon></button>
-            {
-                (modalOpen && !id) && (
-                    <Modal component={FormAgregarPersona} modalOpen={modalOpen} />
-                )
-            }
-                
-                    <p>Agregar nueva persona</p>
-            
+
+            <div className="agregar-personas">
+                <button className="estiloBotonAgregarPersona" onClick={onModal}> <ion-icon name="add-circle"></ion-icon></button>
+                {
+                    (modalOpen && !id) && (
+                        <Modal component={FormAgregarPersona} modalOpen={modalOpen} />
+                    )
+                }
+
+                <p>Agregar nueva persona</p>
+            </div>
 
             <h2>Lista de personas existentes</h2>
             {

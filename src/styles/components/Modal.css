@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  z-index: 10;
 }
 
 .modal-close {
@@ -32,13 +33,14 @@
   color: var(--lightpink);
 }
 
-.modal {
+#modal {
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 1000;
   -webkit-animation: fadein 0.3s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 0.3s; /* Firefox < 16 */
   -ms-animation: fadein 0.3s; /* Internet Explorer */

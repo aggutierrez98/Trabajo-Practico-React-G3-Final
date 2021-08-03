@@ -43,13 +43,15 @@ export const LibroCard = ({ id: uid }) => {
     }
 
     return (
-        <tr>
-            <td>{nombre}</td>
-            <td>{descripcion}</td>
+        <tr className="libro-card">
+            <td><p>{nombre}</p></td>
+            <td><p>{descripcion}</p></td>
             <td>
-                {
-                    persona ? `${persona.nombre}` : `No está prestado`
-                }
+                <p>
+                    {
+                        persona ? `${persona.nombre}` : `No está prestado`
+                    }
+                </p>
             </td>
 
             <PrestarDevolverLibro uid={uid} />

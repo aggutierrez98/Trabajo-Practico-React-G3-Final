@@ -18,7 +18,7 @@ export const Modal = ({
     return (
 
         <div>
-            <div className="modal">
+            <div id="modal">
                 <div className="modal-contenido">
                     <div className="modal-close">
                         <button onClick={onModal}><ion-icon name="close-circle-outline"></ion-icon></button>

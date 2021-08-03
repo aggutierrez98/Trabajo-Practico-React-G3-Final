@@ -18,7 +18,7 @@ export const ModalLibrosPersona = ({
     return (
 
         <div>
-            <div className="modal-libros">
+            <div id="modal-libros">
                 <div className="modal-libros-contenido">
                     <div className="modal-libros-close">
                         <button onClick={onModal}><ion-icon name="close-circle-outline"></ion-icon></button>

@@ -15,20 +15,49 @@ export const LibrosPrestados = ({ id }) => {
     useEffect(() => {
         const nuevosLibros = libros.filter(libro => libro.persona_id === id);
         setlibrosPersona(nuevosLibros)
-        setActive(true);
-    }, [dispatch, id, libros])
+
+        if (librosPersona.length === 0) {
+            setActive(false);
+        } else {
+            setActive(true);
+        }
+
+    }, [dispatch, id, libros, librosPersona.length])
 
     return (
-        <div>
-            {
-                (active) &&
+        <div className="estiloLibro libro-page">
 
-                librosPersona?.map(libro => (
-                    <LibroCard
-                        key={libro._id}
-                        id={libro._id}
-                    />
-                ))
+            {
+                (active)
+                    ? (
+                        librosPersona?.map(libro => (
+                            <>
+                                <h2>Libros prestados</h2>
+                                <br></br>
+
+                                <tbody>
+
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripcion</th>
+                                        <th>Prestado A</th>
+                                        <th colSpan="4">Acciones</th>
+                                    </tr>
+
+                                </tbody>
+
+                                <LibroCard
+                                    key={libro._id}
+                                    id={libro._id}
+                                />
+                            </>
+                        ))
+
+                    )
+                    :
+                    (
+                        <h2>No hay libros prestados a esta persona</h2>
+                    )
             }
         </div>
     )

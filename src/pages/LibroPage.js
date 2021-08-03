@@ -47,7 +47,6 @@ export const LibroPage = () => {
                 <SearchLibros />
                 <BuscarPorGenero />
             </div>
-
             <table>
                 <tbody>
 
@@ -93,6 +92,6 @@ export const LibroPage = () => {
             </table>
 
 
-        </div>
+        </div >
     )
 }

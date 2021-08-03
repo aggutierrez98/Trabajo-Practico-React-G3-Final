@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { startCargarGeneros } from '../actions/generos';
 import { FormAgregarGenero } from '../components/genero/FormAgregarGenero';
 import { GeneroCard } from '../components/genero/GeneroCard';
-// import "../styles/pages/pages.css";
 import "./css/generoPageStyle.css"
 
 
@@ -21,10 +20,9 @@ export const GeneroPage = () => {
 
         <div className="estiloGenero">
 
-                <h1>Página de Géneros</h1>
+            <h1>Página de Géneros</h1>
 
             <FormAgregarGenero />
-
 
             <h2>Lista de géneros existentes</h2>
             {
@@ -35,6 +33,8 @@ export const GeneroPage = () => {
                     />
                 ))
             }
+
+
         </div>
 
 

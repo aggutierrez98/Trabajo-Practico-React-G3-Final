@@ -5,6 +5,7 @@ import {
     Redirect,
     Route
 } from "react-router-dom";
+
 import { Navbar } from '../components/Navbar';
 import { GeneroPage } from '../pages/GeneroPage';
 

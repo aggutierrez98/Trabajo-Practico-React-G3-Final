@@ -27,7 +27,7 @@ export const SearchLibros = () => {
             const librosEncontrados = libros.filter(libro => libro.nombre.includes(libroBuscado));
             dispatch(filtrarLibros(librosEncontrados));
             dispatch(terminarBusqueda());
-        } 
+        }
         // else {
 
         //     const librosEncontrados = libros;
@@ -52,7 +52,6 @@ export const SearchLibros = () => {
 
             <button
                 type="submit"
-                className="bottonLibro"
             >
                 Buscar...
             </button>

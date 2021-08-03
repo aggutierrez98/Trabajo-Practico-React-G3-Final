@@ -4,7 +4,6 @@ import { startCrearGenero } from '../../actions/generos';
 import { cerrarModal } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
 import "../../pages/css/generoPageStyle.css";
-// import "../../styles/components/form.css";
 
 const initialState = {
     nombre: "",
@@ -28,30 +27,22 @@ export const FormAgregarGenero = () => {
 
 
     return (
-        <div>
+        <div className="formGenero">
 
             <form onSubmit={handleSubmit}>
 
-                <label htmlFor="nombre" className="colocar_nombre">Agregar un nuevo género<span>*</span></label>
-
-                <div className="formGenero">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td><input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="¿Cuál es el nuevo género?" autoComplete="off"></input></td>
-                                <td><button type="submit"> <ion-icon name="add-circle"></ion-icon> </button></td>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-
+                <label htmlFor="nombre" >Agregar un nuevo género<span>*</span></label>
+                <table>
+                    <thead>
+                        <tr>
+                            <td><input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar un nuevo genero" autoComplete="off" required></input></td>
+                            <td><button type="submit"> <ion-icon name="add-circle"></ion-icon> </button></td>
+                        </tr>
+                    </thead>
+                </table>
+                <p className="aviso"><span> * </span>Campos obligatorios.</p>
 
             </form>
-
-
-            <p className="aviso"><span> * </span>Campos obligatorios.</p>
-
-            <hr></hr>
 
         </div>
     )

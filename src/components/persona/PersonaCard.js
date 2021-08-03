@@ -5,8 +5,8 @@ import { abrirModal, abrirModalLibrosPrestados } from '../../actions/ui';
 import { Modal } from '../Modal';
 import { FormActualizarPersona } from './FormActualizarPersona';
 import { LibrosPrestados } from './LibrosPrestados';
-import '../../pages/css/personaPageStyle.css';
 import { ModalLibrosPersona } from './ModalLibroPersonas';
+import '../../pages/css/personaPageStyle.css';
 
 export const PersonaCard = ({ nombre, apellido, alias, email, _id: uid }) => {
 
@@ -40,9 +40,9 @@ export const PersonaCard = ({ nombre, apellido, alias, email, _id: uid }) => {
             </div>
 
             <div className="estiloPersonaTr">
-                <button onClick={onBorrar}> <ion-icon name="trash"></ion-icon></button>
+                <button className="boton-persona-card" onClick={onBorrar}> <ion-icon name="trash"></ion-icon></button>
 
-                <button onClick={onModalActualizar}> <ion-icon name="reload"></ion-icon></button>
+                <button className="boton-persona-card" onClick={onModalActualizar}> <ion-icon name="reload"></ion-icon></button>
 
                 {
                     (modalOpen && uid === id) && (
@@ -50,7 +50,7 @@ export const PersonaCard = ({ nombre, apellido, alias, email, _id: uid }) => {
                     )
                 }
 
-                <button onClick={onModalLibros}> <ion-icon name="enter"></ion-icon></button>
+                <button className="boton-persona-card" onClick={onModalLibros}> <ion-icon name="enter"></ion-icon></button>
 
                 {
                     (modalOpenBorrowed && uid === id) && (

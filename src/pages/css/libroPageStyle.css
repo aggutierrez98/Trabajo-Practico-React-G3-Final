@@ -1,312 +1,286 @@
-
-.estiloLibro{
-    width: 75%; 
-    height: auto;
-    margin: 80px auto;
-	border-radius: 10px;  
-	padding: 20px;  
-    background-color: #fbfbfb; 
+.estiloLibro {
+  width: 75%;
+  height: auto;
+  margin: 80px auto;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fbfbfb;
 }
 
-.estiloLibro h1, h2{
-    color: #ab4493; 
-    text-align: center;
+.estiloLibro h1,
+h2 {
+  color: #ab4493;
+  text-align: center;
 }
 
-.estiloLibro hr{
-    border-width: 2px;
-    border-color: #ab4493;
+.estiloLibro hr {
+  border-width: 2px;
+  border-color: #ab4493;
 }
 
-.encabezado{
-    display: flex;
+.encabezado {
+  display: flex;
 }
 
 .generoSelect {
-    border:1px solid #ab4493!important ;
-    border-radius: 5px;     
-
+  border: 1px solid #ab4493 !important ;
+  border-radius: 5px;
 }
 
-input{
-	background-color: #fbfbfb; 
-	width: 260px; 
-	height: 40px; 
-	border-radius: 5px 0px 0px 5px;     
-	border-style: solid; 
-	border-width: 1px; 
-	border-color: #ab4493; 
-	margin-top: 10px;  
-	padding-left: 10px;
-    margin-bottom: 20px; 
+.libro-card td {
+  margin-left: 50px;
 }
 
-label{
-    display: block; 
-    float: center; 	
-  }
-
-  .bottonLibro{
-	height: 45px; 
-	padding-left: 5px;
-	padding-right: 5px; 	
-	margin-bottom: 20px; 
-	margin-top: 10px; 	
-	background-color: #ab4493; 
-	border-color: #ab4493; 
-	border-style: solid; 
-	border-radius: 10px;	
-	width: 80px;   
-    cursor: pointer;
-    color: #e7f0f0;
-
+.estiloLibro input {
+  background-color: #fbfbfb;
+  width: 260px;
+  height: 40px;
+  border-radius: 5px 0px 0px 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ab4493;
+  margin-top: 10px;
+  padding-left: 10px;
+  margin-bottom: 20px;
 }
 
-.buscar{
-	border-radius: 0px 10px 10px 0px;	
+.estiloLibro label {
+  display: block;
+  float: center;
 }
 
-, .bottonLibro:hover{
-    background-color: #8a3676; 
-    border-color: #7c306a; 
+.bottonLibro {
+  height: 45px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  background-color: #ab4493;
+  border-color: #ab4493;
+  border-style: solid;
+  border-radius: 10px;
+  width: 80px;
+  cursor: pointer;
+  color: #e7f0f0;
 }
 
-span{
-	color: #ab4493; 
+.buscar {
+  border-radius: 0px 10px 10px 0px;
 }
 
-
-.aviso{
-	font-size: 13px;  
-	color: #0e0e0e;  
+.bottonLibro:hover {
+  background-color: #8a3676;
+  border-color: #7c306a;
 }
 
-p{
-	font-size: 14px; 
-	color: #0e0e0e; 
+.estiloLibro span {
+  color: #ab4493;
+}
+
+.aviso {
+  font-size: 13px;
+  color: #0e0e0e;
+}
+
+.estiloLibro p {
+  font-size: 14px;
+  color: #0e0e0e;
 }
 
 ::-webkit-input-placeholder {
-    color: #a8a8a8;
-   }
-   
-
-.estiloLibro input:focus{
-       outline:0;
-       border: 1px solid #97d848;
-   }
-
-.cardLibro {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border-color: #ab4493; 
-	border-style: solid; 
-	border-radius: 10px;
-    margin: 30px;
-
+  color: #a8a8a8;
 }
 
-.cardLibro button{
-   height: 50px;
-   width: 60px;
+.estiloLibro input:focus {
+  outline: 0;
+  border: 1px solid #f500cc;
 }
 
-.cardLibro tr{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cardLibro tr td{
-    margin-left: 50%;
-}
 .confirmarCambio {
-    height: fit-content;
-    width: fit-content;
+  height: fit-content;
+  width: fit-content;
 }
-.prestarLibro{
-    display: flex;
-    margin: 20px auto;
+.prestarLibro {
+  display: flex;
+  margin: 20px auto;
 }
-.prestarLibro select{
-    height: fit-content ;
-    height: 30px;
+.prestarLibro select {
+  height: fit-content;
+  height: 30px;
 }
-.prestarLibro button{
-    margin:0px;
-	border-radius: 0px 10px 10px 0px;
-    height: 30px;
+.prestarLibro button {
+  margin: 0px;
+  border-radius: 0px 10px 10px 0px;
+  height: 30px;
 }
-table{
-    margin: 0 auto;
+.estiloLibro table {
+  margin: 0 auto;
 }
-.listado table, th, td {
-    /* border: 5px solid black; */
-  }
 
 .tooltip {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-  
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-  }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
+  position: relative;
+  display: inline-block;
+}
 
-                
-  .bottonLibro ion-icon  {
-    cursor: pointer;
-    width: 60%;
-    height: 60%;
-    transition: color 0.2s;
-    margin: 0px;
-    padding: 0px;
-    z-index: 0;
-  }
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
 
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
-  .libro-page {
-    height: auto;
-    width: 1000px;
-    margin: 80px auto;
-    border-radius: 10px;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    background-color: #fbfbfb;
-    padding-left: 30px;
-  }
-  
-  .buscadores button {
-    height: 70px;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    background-color: #ab4493;
-    border-color: #ab4493;
-    border-style: solid;
-    border-radius: 10px;
-    width: 80px;
-    cursor: pointer;
-    color: #ffff;
-  }
-  
-  .buscadores {
-    width: 96%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .agregar-libro button {
-    padding: 0;
-    margin: 0;
-    border: none;
-  }
-  
-  .agregar-libro {
-    display: flex;
-    width: 150px;
-    align-items: center;
-  }
-  
-  .agregar-libro button ion-icon {
-    background-color: none;
-    cursor: pointer;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    transition: color 0.2s;
-  }
-  
-  .agregar-libro button ion-icon:hover {
-    color: var(--lightpink);
-  }
-  
-  .search-libro {
-    width: 400px;
-    margin-left: 130px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-libro button {
-    margin-left: 10px;
-    border: none;
-    border-radius: 100px;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  
-  .search-libro input {
-    background-color: #fbfbfb;
-    width: 260px;
-    height: 40px;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #ab4493;
-    padding-left: 10px;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  
-  .search-libro button:hover {
-    background-color: var(--lightpink);
-  }
-  
-  .search-genero {
-    width: 220px;
-    margin: 0 0px 0 0px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .search-genero button {
-    margin: 0 0px 0 0px;
-    height: 45px;
-    width: 30%;
-    border: none;
-  }
-  
-  .search-genero button:hover {
-    background-color: var(--lightpink);
-  }
-  
-  .search-genero select {
-    position: relative;
-    border: 1px solid #ccc;
-    width: 150px;
-    overflow: hidden;
-    background-color: #fff;
-    padding: 5px 8px;
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-    appearance: none;
-  }
-  
-  .search-genero select:before {
-    content: "";
-    right: 5px;
-    top: 7px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-  }
-  
+.bottonLibro ion-icon {
+  cursor: pointer;
+  width: 60%;
+  height: 60%;
+  transition: color 0.2s;
+  margin: 0px;
+  padding: 0px;
+  z-index: 0;
+}
+
+.libro-card button {
+  margin-left: 15px;
+}
+
+.libro-card select {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.libro-card p {
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+.buscadores button {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  background-color: #ab4493;
+  border-color: #ab4493;
+  border-style: solid;
+  border-radius: 10px;
+  width: 80px;
+  cursor: pointer;
+  color: #ffff;
+}
+
+.buscadores {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  border-bottom: pink solid 2px;
+}
+
+.agregar-libro button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: white;
+}
+
+.agregar-libro {
+  display: flex;
+  width: 150px;
+  align-items: center;
+}
+
+.agregar-libro button ion-icon {
+  background-color: none;
+  color: var(--darkpink);
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  height: 70px;
+  transition: color 0.2s;
+}
+
+.agregar-libro button ion-icon:hover {
+  color: var(--lightpink);
+}
+
+.search-libro {
+  width: 400px;
+  margin-left: 130px;
+  display: flex;
+  align-items: center;
+}
+
+.search-libro button {
+  margin-left: 10px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 45px;
+}
+
+.search-libro input {
+  background-color: #fbfbfb;
+  width: 260px;
+  height: 40px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ab4493;
+  padding-left: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.search-libro button:hover {
+  background-color: var(--lightpink);
+}
+
+.search-genero {
+  width: 250px;
+  margin: 0 15px 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-genero button {
+  margin: 0 0px 0 0px;
+  height: 45px;
+  width: 30%;
+  border: none;
+}
+
+.search-genero button:hover {
+  background-color: var(--lightpink);
+}
+
+.search-genero select {
+  position: relative;
+  border: 1px solid #ccc;
+  width: 150px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 5px 8px;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  appearance: none;
+}
+
+.search-genero select:before {
+  content: "";
+  right: 5px;
+  top: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
