@@ -33,7 +33,7 @@ export const LibroPage = () => {
 
     return (
 
-        <div className="estiloLibro libro-page">
+        <div className="estiloLibro">
             {
                 (modalOpen && !id) && (
                     <Modal component={FormAgregarLibros} modalOpen={modalOpen} />

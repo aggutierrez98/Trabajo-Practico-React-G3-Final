@@ -29,7 +29,7 @@ export const PersonaCard = ({ nombre, apellido, alias, email, _id: uid }) => {
     return (
 
         <div className="estiloPersona">
-            <div>
+            <div className="datos">
                 <label>Nombre: </label>{nombre}
 
                 <label>Apellido: </label>{apellido}

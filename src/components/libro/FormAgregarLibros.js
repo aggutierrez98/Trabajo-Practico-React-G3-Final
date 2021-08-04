@@ -38,22 +38,22 @@ export const FormAgregarLibros = () => {
     };
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
+        <form id="form" onSubmit={handleSubmit}>
 
             <h2>Agregar libro</h2>
             <p>Ingresar datos de un libro</p>
 
-            <div className="form-label">
+            <div id="form-label">
                 <label>Nombre</label>
                 <span> *</span>
             </div>
             <input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar nombre" autoComplete="off" required></input>
-            <div className="form-label">
+            <div id="form-label">
                 <label>Descripcion</label>
             </div>
             <input type="text" name="descripcion" onChange={handleInputChange} value={descripcion} placeholder="Ingresar descripcion" autoComplete="off"></input>
 
-            <div className="form-label">
+            <div id="form-label">
                 <label>Genero</label>
                 <span> *</span>
             </div>
@@ -71,8 +71,8 @@ export const FormAgregarLibros = () => {
                 }
             </select>
 
-            <button className="boton-form">Hecho</button>
-            <div className="form-label">
+            <button id="boton-form">Hecho</button>
+            <div id="form-label">
                 <span>* </span>
                 <label>Los campos son obligatorios</label>
             </div>

@@ -27,7 +27,7 @@ export const PrestarDevolverLibro = ({ uid }) => {
             <td className="prestarLibro">
 
                 <select value={persona} onChange={personaChange}>
-                    <option hidden> Prestar a </option>
+                    <option hidden>Prestar</option>
                     {
                         personas.map(persona => (
                             <option
@@ -40,7 +40,7 @@ export const PrestarDevolverLibro = ({ uid }) => {
                         ))
                     }
                 </select>
-                <button className="bottonLibro" onClick={onPrestamo}>
+                <button className="bottonLibro" id="boton-prestar" onClick={onPrestamo}>
                     confirmar
                 </button>
             </td>

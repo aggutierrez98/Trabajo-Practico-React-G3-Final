@@ -25,18 +25,18 @@ export const FormActualizarLibro = ({ id }) => {
 
     return (
         <div>
-            <form className="form" onSubmit={onSubmit}>
+            <form id="form" onSubmit={onSubmit}>
                 <h2>Actualizar libro</h2>
                 <p>Ingresar datos a actualizar</p>
-                <div className="form-label">
+                <div id="form-label">
                     <label>Nombre</label>
                     <span> *</span>
                 </div>
                 <input type="text" name="nombre" onChange={handleInputChange} value={nombre} placeholder="Ingresar nombre" autoComplete="off" required></input>
-                <label className="form-label">Descripcion</label>
+                <label id="form-label">Descripcion</label>
                 <input type="text" name="descripcion" onChange={handleInputChange} value={descripcion} placeholder="Ingresar descripcion" autoComplete="off"></input>
-                <button className="boton-form">Hecho</button>
-                <div className="form-label">
+                <button id="boton-form">Hecho</button>
+                <div id="form-label">
                     <span>* </span>
                     <label>Los campos son obligatorios</label>
                 </div>

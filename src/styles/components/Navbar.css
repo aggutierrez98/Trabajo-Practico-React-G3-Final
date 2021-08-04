@@ -1,11 +1,18 @@
 .navbar-position {
   position: fixed;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   top: 0px;
   background-color: rgba(195, 24, 201, 0.5);
   width: 100%;
   height: 63px;
   z-index: 1000;
   margin-left: -4px;
+}
+
+.navbar-responsive {
+  display: none;
 }
 
 .home {

@@ -51,9 +51,16 @@ export const SearchLibros = () => {
             />
 
             <button
+                className="buscar-boton"
                 type="submit"
             >
                 Buscar...
+            </button>
+            <button
+                type="submit"
+                id="buscar-lupa"
+            >
+                <ion-icon name="search"></ion-icon>
             </button>
         </form>
 

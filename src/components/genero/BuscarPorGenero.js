@@ -41,8 +41,16 @@ export const BuscarPorGenero = () => {
                 }
             </select>
 
-            <button className="bottonLibro" onClick={buscarLibros}>
+            <button
+                className="buscar-boton"
+                onClick={buscarLibros}>
                 Buscar
+            </button>
+            <button
+                id="buscar-lupa"
+                onClick={buscarLibros}
+            >
+                <ion-icon name="search"></ion-icon>
             </button>
 
         </div>

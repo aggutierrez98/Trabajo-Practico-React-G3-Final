@@ -1,24 +1,344 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
-
-body {
-  height: 100%;
-  font-family: "Poppins", sans-serif;
-  background-color: var(--darkpink);
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 
 :root {
   --darkpink: #ab4493;
   --lightpink: #f045c8;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--darkpink);
+}
+
+@media screen and (max-width: 950px) {
+  :root {
+    background-color: white;
+    padding: 0px;
+  }
+
+  .estiloGenero {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    border-radius: 0;
+    padding: 20px;
+    background-color: #fbfbfb;
+  }
+
+  .estiloFormularioPersona {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    border-radius: 0;
+    padding: 20px;
+    background-color: #fbfbfb;
+  }
+
+  .estiloPersona {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-color: #ab4493;
+    border-style: solid;
+    border-radius: 10px;
+    margin-left: 0;
+    padding: 30px;
+    width: 80%;
+  }
+
+  .estiloLibro {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    border-radius: 0;
+    padding: 20px;
+    background-color: #fbfbfb;
+  }
+
+  .search-libro {
+    margin-left: 60px;
+  }
+  .search-genero {
+    width: 25%;
+  }
+
+  .libro-card td {
+    width: 5vw;
+    text-align: center;
+    font-size: 10px !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .estiloLibro {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background-color: #fbfbfb;
+    padding: 0;
+    margin-right: 0px;
+  }
+
+  .buscadores {
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    height: 200px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+  }
+
+  .search-libro {
+    /* margin: 5px; */
+    margin-left: 15px;
+    width: 50%;
+    height: 50%;
+  }
+
+  .search-genero {
+    margin-left: 15px;
+    width: 50%;
+    height: 30%;
+    margin-top: 2%;
+    justify-content: flex-start;
+  }
+
+  .agregar-libro {
+    width: 50%;
+  }
+  /* 
+  .libro-card td {
+    text-align: center;
+    font-size: 10px !important;
+  } */
+
+  .libro-card button {
+    background-color: white;
+    border: none;
+  }
+
+  #boton-prestar {
+    background-color: var(--darkpink);
+  }
+
+  .libro-card td > button ion-icon {
+    color: var(--darkpink);
+    border: none;
+    width: 100%;
+  }
+
+  .libro-card td > button ion-icon:hover {
+    color: var(--lightpink);
+  }
+
+  .libro-card td > button:hover {
+    background-color: transparent;
+  }
+
+  .estiloLibro span {
+    color: white;
+  }
+
+  .libro-card td > button {
+    width: 80%;
+    padding: 0;
+  }
+
+  .libro-card td p {
+    font-size: 12px;
+    margin-right: 0 !important;
+    margin-left: 0;
+  }
+
+  .libro-card td select {
+    margin-left: 5px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .prestarLibro {
+    width: 80%;
+  }
+
+  .bottonLibro {
+    padding: 0;
+    margin: px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .buscadores {
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 0px;
+    padding-left: 0;
+    margin-bottom: 10px;
+    margin-top: -35px;
+    width: 100%;
+    height: 45px;
+  }
+
+  .search-libro {
+    margin-left: 0px;
+    width: 70%;
+    margin-right: 0;
+    justify-content: space-evenly;
+  }
+
+  /* .search-libro::placeholder {
+    font-size: 8px !important;
+  } */
+
+  .search-libro input {
+    height: 4vh;
+    margin-right: -12%;
+    /* font-size: 10px !important; */
+  }
+
+  .buscar-boton {
+    display: none;
+  }
+
+  #buscar-lupa {
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  .search-genero {
+    width: 50%;
+    align-items: center;
+    margin-top: 0;
+    margin-left: 0%;
+  }
+
+  .search-genero select {
+    width: 100%;
+    height: 5vh;
+  }
+
+  .search-genero select {
+    width: 100%;
+    height: 5vh;
+  }
+
+  .agregar-libro {
+    width: 10%;
+  }
+  .agregar-libro p {
+    display: none;
+  }
+
+  .agregar-libro button {
+    background-color: transparent;
+  }
+
+  .libro-card p {
+    font-size: 8px !important;
+  }
+
+  .estiloLibro {
+    font-size: 8px;
+  }
+
+  .libro-card td select {
+    margin-left: 5px;
+    font-size: 8px;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .prestarLibro button {
+    margin-left: 5px;
+    font-size: 8px;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    height: 15%;
+  }
+
+  .navbar-position {
+    top: 0px;
+    background-color: rgba(195, 24, 201, 0.5);
+    width: 100%;
+    height: 40px;
+    z-index: 1000;
+    margin-left: -4px;
+    font-size: 10px !important;
+  }
+
+  .titulo-nav {
+    display: inline-flex;
+    margin: 1% 1% 0;
+    padding: 8px;
+  }
+
+  .titulo-nav:hover {
+    padding: 8px;
+  }
+
+  .cardGenero {
+    margin-left: 5px !important;
+    width: 90%;
+  }
+
+  .cardGenero tr {
+    margin-left: 0px;
+  }
+
+  .formGenero input {
+    width: 60vw;
+    margin-left: 10px;
+  }
+
+  .estiloFormularioPersona {
+    margin-top: 20px;
+    /* width:  */
+  }
+
+  .estiloGenero {
+    margin-top: 20px;
+  }
+
+  .datos {
+    max-width: 180px;
+  }
+
+  #modal {
+    position: fixed;
+    /* width: 100%;
+    height: 100%; */
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  #modal-contenido {
+    /* top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+    /* margin: 10% auto; */
+    margin: 0;
+    background-color: rgb(231, 240, 240);
+    width: 62%;
+    /* height: 100%; */
+    /* padding: 10% 10% 10% 10%; */
+    /* margin: 10% auto; */
+    position: absolute;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+  }
+
+  #form {
+    width: 200px;
+  }
 }

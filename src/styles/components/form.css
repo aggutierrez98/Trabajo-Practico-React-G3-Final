@@ -1,4 +1,4 @@
-.boton-form {
+#boton-form {
   background-color: var(--darkpink);
   border-radius: 8px;
   padding: 10px;
@@ -12,22 +12,22 @@
   transition: background-color 0.2s;
 }
 
-.boton-form:hover {
+#boton-form:hover {
   background-color: var(--lightpink);
 }
 
-.form {
+#form {
   margin-top: 2px;
   display: flex;
   flex-direction: column;
   width: 350px;
 }
 
-.form p {
+#form p {
   font-size: 20px;
 }
 
-.form input {
+#form input {
   width: 95.25%;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -37,19 +37,18 @@
   padding-left: 10px;
 }
 
-.form input::placeholder {
+#form input::placeholder {
   color: grey;
   font-size: 1.2em;
   font-style: italic;
   opacity: 0.8;
 }
 
-.form h2 {
+#form h2 {
   font-size: 35px;
   color: var(--darkpink);
 }
-
-.form select {
+#form select {
   width: 100%;
   margin-bottom: 20px;
   height: 3em;
@@ -62,21 +61,21 @@
   opacity: 0.8;
 }
 
-.form h2 {
+#form h2 {
   margin-top: 0px;
   margin-bottom: 2px;
 }
 
-.form-label {
+#form-label {
   font-size: 13px;
   display: flex;
 }
 
-.form-label span {
+#form-label span {
   color: var(--darkpink);
   margin-right: 3px;
 }
 
-.form-label label {
+#form-label label {
   margin-right: 3px;
 }

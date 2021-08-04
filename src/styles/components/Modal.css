@@ -1,4 +1,4 @@
-.modal-contenido {
+#modal-contenido {
   background-color: rgb(231, 240, 240);
   width: 400px;
   padding: 20px 20px;
@@ -11,17 +11,17 @@
   z-index: 10;
 }
 
-.modal-close {
+#modal-close {
   justify-content: flex-start;
   width: 100%;
 }
 
-.modal-close button {
+#modal-close button {
   font-size: 35px;
   position: absolute;
-  top: 0px;
-  left: 0px;
-  color: rgb(143, 143, 143);
+  top: 0px !important;
+  left: 0px !important;
+  color: rgb(143, 143, 143) !important;
   background: none;
   border: none;
   cursor: pointer;
@@ -29,7 +29,7 @@
   transition: color 0.2s;
 }
 
-.modal-close button:hover {
+#modal-close button ion-icon:hover {
   color: var(--lightpink);
 }
 
