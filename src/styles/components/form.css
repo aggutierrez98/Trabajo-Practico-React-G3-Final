@@ -20,7 +20,7 @@
   margin-top: 2px;
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 100%px;
 }
 
 #form p {
