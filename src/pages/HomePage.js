@@ -1,9 +1,10 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 export const HomePage = () => {
     return (
         <div>
-
+            <Redirect to="/libro" />
         </div>
     )
 }
