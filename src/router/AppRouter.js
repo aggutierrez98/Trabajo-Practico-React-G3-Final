@@ -9,7 +9,7 @@ import {
 import { Navbar } from '../components/Navbar';
 import { GeneroPage } from '../pages/GeneroPage';
 
-import { HomePage } from '../pages/HomePage';
+// import { HomePage } from '../pages/HomePage';
 import { LibroPage } from '../pages/LibroPage';
 import { PersonaPage } from '../pages/PersonaPage';
 
@@ -24,11 +24,11 @@ export const AppRouter = () => {
             </div>
 
             <Switch>
-                <Route exact path="/" component={HomePage} />
+                {/* <Route exact path="/" component={HomePage} /> */}
 
+                <Route exact path="/" component={LibroPage} />
                 <Route exact path="/persona" component={PersonaPage} />
                 <Route exact path="/genero" component={GeneroPage} />
-                <Route exact path="/libro" component={LibroPage} />
 
                 <Redirect to="/" />
             </Switch>
