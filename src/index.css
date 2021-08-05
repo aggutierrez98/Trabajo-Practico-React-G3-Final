@@ -214,6 +214,7 @@ body {
     background-color: white !important;
     padding: 0;
     margin: 0;
+    /* width: 95vw; */
   }
 
   .buscadores {
@@ -373,7 +374,7 @@ body {
 
   #modal-contenido {
     margin: 0;
-    background-color: rgb(231, 240, 240);
+    background-color: white;
     width: 85vw;
     position: relative;
     border-radius: 0;
