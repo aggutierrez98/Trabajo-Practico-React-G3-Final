@@ -5,10 +5,10 @@ import { store } from './store/store'
 
 export const BooksApp = () => {
     return (
-        <div>
+        <>
             <Provider store={store}>
                 <AppRouter />
             </Provider>
-        </div>
+        </>
     )
 }

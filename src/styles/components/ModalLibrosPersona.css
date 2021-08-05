@@ -1,4 +1,4 @@
-.modal-libros-contenido {
+#modal-libros-contenido {
   background-color: rgb(231, 240, 240);
   width: 1200px;
   margin: 10% auto;
@@ -6,18 +6,19 @@
   border-radius: 10px;
   align-items: center;
   flex-direction: column;
+  border-radius: 10px;
   z-index: 3000;
 }
 
-.modal-libros-close {
+#modal-libros-close {
   justify-content: flex-start;
   width: 100%;
 }
 
-.modal-libros-close button {
+#modal-libros-close button {
   font-size: 35px;
   position: absolute;
-  top: -20px;
+  top: -8px;
   left: 0px;
   color: rgb(143, 143, 143);
   background: none;
@@ -27,7 +28,7 @@
   transition: color 0.2s;
 }
 
-.modal-libros-close button:hover {
+#modal-libros-close button:hover {
   color: var(--lightpink);
 }
 
@@ -44,6 +45,33 @@
   -o-animation: fadein 0.3s; /* Opera < 12.1 */
   animation: fadein 0.3s;
   z-index: 3000;
+}
+
+#modal-libros-contenido table tbody {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+#modal-libros-contenido table tbody tr {
+  display: flex;
+  flex-direction: row;
+  margin-left: -5%;
+  justify-content: space-around;
+}
+
+#modal-libros-contenido table tbody tr th {
+  margin-left: 10%;
+}
+
+#modal-libros-contenido td {
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+}
+
+#modal-libros-contenido {
+  width: 50%;
 }
 
 @keyframes fadein {
